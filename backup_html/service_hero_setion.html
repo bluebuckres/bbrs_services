@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BlueBuck Research Services | 3x Faster Deployment</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        "background-light": "#fcfaf2",
+                        "background-dark": "#0a0a0a",
+                        accent: "#d8c7ff",
+                        "neon-purple": "#b088ff",
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        "xl": "1.5rem",
+                        "2xl": "2.5rem",
+                        "3xl": "3.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .serif-italic { font-style: italic; }
+            .glass-nav {
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                background: rgba(10, 10, 10, 0.8);
+            }
+            .hero-mesh {
+                background: radial-gradient(circle at 50% 50%, rgba(176, 136, 255, 0.1) 0%, transparent 70%);
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .chain-node {
+                position: relative;
+            }
+            .chain-node::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                width: 2rem;
+                height: 1px;
+                background: linear-gradient(90deg, rgba(176, 136, 255, 0.5), transparent);
+            }
+            .testimonial-card {
+                background: #141414;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .testimonial-card:hover {
+                background: #1a1a1a;
+                transform: scale(1.02);
+            }
+            .testimonial-group:hover .testimonial-card:not(:hover) {
+                filter: blur(4px);
+                opacity: 0.5;
+            }
+            .glow-border {
+                border: 1px solid rgba(176, 136, 255, 0.2);
+                box-shadow: 0 0 20px rgba(176, 136, 255, 0.05);
+            }
+            .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .accordion-item:hover .accordion-content {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-gray-100 font-sans selection:bg-neon-purple/30 transition-colors duration-300">
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-6">
+        <div
+            class="max-w-7xl mx-auto glass-nav border border-white/5 rounded-2xl py-3 px-6 flex items-center justify-between shadow-2xl">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-black text-xl">insights</span>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-white">BlueBuck</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-xs font-semibold uppercase tracking-widest opacity-60 hover:opacity-100 transition-all"
+                    href="#services">Services</a>
+                <a class="text-xs font-semibold uppercase tracking-widest opacity-60 hover:opacity-100 transition-all"
+                    href="#tech">Tech Stack</a>
+                <a class="text-xs font-semibold uppercase tracking-widest opacity-60 hover:opacity-100 transition-all"
+                    href="#portfolio">Portfolio</a>
+                <a class="text-xs font-semibold uppercase tracking-widest opacity-60 hover:opacity-100 transition-all"
+                    href="#faq">FAQ</a>
+            </div>
+            <button
+                class="bg-white text-black px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-neon-purple hover:text-white transition-all">
+                Get Started
+            </button>
+        </div>
+    </nav>
+    <main>
+        <section
+            class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden hero-mesh">
+            <div class="absolute inset-0 z-0 opacity-30">
+                <div class="absolute inset-0"
+                    style="background-image: radial-gradient(rgba(176, 136, 255, 0.15) 1px, transparent 1px); background-size: 40px 40px;">
+                </div>
+            </div>
+            <div class="relative z-10 max-w-5xl">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-purple/30 bg-neon-purple/5 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-neon-purple animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-neon-purple">3x Faster Deployment. 6
+                        Months ROI.</span>
+                </div>
+                <h1 class="font-display text-7xl md:text-[9rem] leading-[0.85] tracking-tighter mb-10">
+                    Engineering <br />
+                    <span class="serif-italic text-neon-purple">Excellence.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-12">
+                    Accelerating enterprise digital transformation through bespoke AI architectures and high-speed
+                    DevOps workflows.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <button
+                        class="px-8 py-4 bg-white text-black rounded-2xl font-bold text-lg hover:bg-neon-purple hover:text-white transition-all min-w-[200px]">
+                        Build Your Solution
+                    </button>
+                    <button
+                        class="px-8 py-4 bg-transparent text-white border border-white/20 rounded-2xl font-bold text-lg hover:border-neon-purple transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">play_circle</span>
+                        View Showreel
+                    </button>
+                </div>
+            </div>

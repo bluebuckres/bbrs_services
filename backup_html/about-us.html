@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="scroll-smooth light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About BlueBuck Research Services | Engineering the Future</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#fdfbf7",
+                        secondary: "#f5f2eb",
+                        accent: "#9d88cc",
+                        neon: "#9333ea",
+                        "dark-gray": "#333333",
+                        "warm-cream": "#faf7f2",
+                        "charcoal": "#2d2d2d"
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        'blob': '30% 70% 70% 30% / 30% 30% 70% 70%',
+                        'asym-1': '2rem 4rem 2rem 6rem',
+                        'asym-2': '5rem 2rem 5rem 2rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-neon-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-fuchsia-500 to-indigo-500;
+            }
+            .neon-border {
+                border: 1px solid rgba(147, 51, 234, 0.2);
+                box-shadow: 0 10px 30px rgba(147, 51, 234, 0.05);
+            }
+            .glass-card {
+                background: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(0, 0, 0, 0.03);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            }
+            .particle-bg {
+                background-image: radial-gradient(circle at 2px 2px, rgba(147, 51, 234, 0.08) 1px, transparent 0);
+                background-size: 40px 40px;
+            }
+        }
+        .organic-image {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .team-avatar-container:hover .team-bio {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .team-avatar-container:hover .team-img {
+            filter: blur(4px) brightness(0.9);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-primary text-charcoal font-sans selection:bg-purple-100 overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div
+            class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md border border-black/5 rounded-2xl px-6 py-3 shadow-sm">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 bg-charcoal rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-xl">insights</span>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-charcoal">BlueBuck</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors" href="#">Home</a>
+                <a class="text-sm font-medium text-charcoal transition-colors" href="#">About</a>
+                <a class="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+                    href="#">Services</a>
+                <a class="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+                    href="#">Careers</a>
+            </div>
+            <button
+                class="bg-charcoal text-white px-5 py-2 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-charcoal/10 transition-all">
+                Work With Us
+            </button>
+        </div>
+    </nav>
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 particle-bg opacity-100"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-100/40 blur-[120px] rounded-full">
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <h1 class="font-display text-7xl md:text-9xl leading-none mb-8 text-neon-gradient">
+                About BlueBuck <br /> Research Services
+            </h1>
+            <p class="text-xl md:text-2xl text-charcoal/50 max-w-2xl mx-auto font-light leading-relaxed">
+                Bridging the gap between frontier AI research and enterprise-grade deployment from the heart of Kolkata.
+            </p>
+        </div>
+    </header>
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                <div class="lg:w-[70%]">
+                    <span class="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-6 block">Our Origins</span>
+                    <h2 class="font-display text-5xl md:text-6xl mb-10 leading-tight text-charcoal">
+                        A tech pioneer born in <span class="italic font-light">Kolkata</span>, <br />
+                        scaling across the globe.
+                    </h2>
+                    <div class="space-y-6 text-lg text-charcoal/70 leading-relaxed max-w-3xl">
+                        <p>
+                            Founded in 2018, BlueBuck Research Services began as a boutique collective of senior
+                            engineers and data scientists frustrated by the sluggish pace of traditional R&amp;D. We set
+                            out to prove that deep technical research could be executed at the speed of a high-growth
+                            startup.
+                        </p>
+                        <p>
+                            Today, we are a premier technology partner for Fortune 500s and ambitious scale-ups alike,
+                            specializing in the intersection of generative AI, cloud infrastructure, and proprietary
+                            research frameworks.
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:w-[30%] lg:pt-20">
+                    <div class="p-8 rounded-asym-1 glass-card border-purple-100">
+                        <p class="font-display text-2xl italic text-accent mb-4">"We don't just solve problems; we
+                            redefine the boundaries of what's technically possible."</p>
+                        <p class="text-sm font-bold uppercase tracking-widest text-charcoal/30">— Founder's Vision</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 bg-secondary/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+                <div
+                    class="bg-white p-10 rounded-asym-2 border border-black/5 h-[320px] flex flex-col justify-between group hover:border-accent/40 transition-all shadow-sm">
+                    <span
+                        class="material-symbols-outlined text-accent text-5xl group-hover:scale-110 transition-transform">rocket_launch</span>
+                    <div>
+                        <h3 class="text-6xl font-display mb-2 text-charcoal">13+</h3>
+                        <p class="text-charcoal/40 font-medium uppercase tracking-widest text-xs">Major Projects
+                            Delivered</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-asym-1 border border-black/5 h-[400px] flex flex-col justify-between group hover:border-accent/40 transition-all shadow-sm">
+                    <span
+                        class="material-symbols-outlined text-accent text-5xl group-hover:scale-110 transition-transform">public</span>
+                    <div>
+                        <h3 class="text-7xl font-display mb-2 text-charcoal">50+</h3>
+                        <p class="text-charcoal/40 font-medium uppercase tracking-widest text-xs">Global Clients</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-2xl border border-black/5 h-[280px] flex flex-col justify-between group hover:border-accent/40 transition-all shadow-sm">
+                    <span
+                        class="material-symbols-outlined text-accent text-5xl group-hover:scale-110 transition-transform">verified</span>
+                    <div>
+                        <h3 class="text-5xl font-display mb-2 text-charcoal">95%</h3>
+                        <p class="text-charcoal/40 font-medium uppercase tracking-widest text-xs">Client Retention Rate
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="font-display text-6xl text-charcoal">Why BlueBuck?</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="bg-white p-12 rounded-3xl border border-black/5 md:translate-y-8 shadow-sm">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined text-accent">psychology</span>
+                    </div>
+                    <h4 class="text-3xl font-display mb-4 text-charcoal">Cutting-edge AI Research</h4>
+                    <p class="text-charcoal/60 leading-relaxed">
+                        Access proprietary LLM frameworks and specialized computer vision models that aren't available
+                        off-the-shelf. We provide the "brain" for your next-gen product.
+                    </p>
+                </div>
+                <div class="bg-white p-12 rounded-3xl border border-black/5 md:-translate-y-8 shadow-sm">
+                    <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined text-sky-400">speed</span>
+                    </div>
+                    <h4 class="text-3xl font-display mb-4 text-charcoal">40% Efficiency Gains</h4>
+                    <p class="text-charcoal/60 leading-relaxed">
+                        Our internal library of DevOps scripts and architectural patterns allows us to deploy
+                        production-ready code significantly faster than traditional agencies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-32 px-6 bg-warm-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-5xl mb-16 text-center text-charcoal">Meet the <span
+                    class="italic text-accent">Architects</span></h2>
+            <div class="flex flex-wrap justify-center gap-6 mb-32">
+                <div class="w-64 h-80 organic-image overflow-hidden border-2 border-white rotate-3 shadow-md">
+                    <img alt="Office Life"
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqvzczW0b1FHv8xT3mwZ-ObljiDD1kukQDOUHo1DcYQW5MINtNCwI5olazU5EX1_l8agY3AWoQ3CmsMcdvvZ8eot-X2sd0bKrbnNd_7iafpuM8LedEawXW0gS6YSoS4XldVbvwec0jeWKI9no70Ydxxlbciyc6EiuSwsbMK_KiRmvh8qJjvHFzQ0D76ij3K0GRdITEPtssWeoDVN2yuDk079UGE33l0KP7f46v9bYdoWhZDdzo76KO801Znl8tg4VYwGoitNUuxn1C" />
+                </div>
+                <div class="w-80 h-64 organic-image overflow-hidden border-2 border-white -rotate-6 mt-12 shadow-md">
+                    <img alt="Whiteboard session"
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0OS_uVGYHAQaMFtJsJyqduFEfZPkrnMfXwtCy6NKs_QHlHZt5kn83fBDnA8EdbBLmUWp-j8QtUNrhMBhbzZPA7HrZ1i9p5i09o8EQF3ZbWolTeIT6whU1DLrtL-nBGF-AfQqxgin6FYvMaT_oDbgPBttzHKQR6eCkuGV8jbWU_aWUKlDtEcLKGaCHyj6QVfKP2S6DS6JPQRQIpz9ckx5YSFPgfrE9epQVGxZM6zqLsbxRVSsSuGsWHXEbaucTEv8cn4kjEEfNHUI1" />
+                </div>
+                <div class="w-72 h-72 organic-image overflow-hidden border-2 border-white rotate-6 shadow-md">
+                    <img alt="Modern Workspace"
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsEtxjzJg120jH7UjWHqmrasw8yNByEFcHxdcA5_1cA81U5iLOX4XO7IHz0zD5NLSeE7L6H9fhM6aqDcoG80nbb-fKXHGvbVOM-TTejQgc713Gf1f-EdyPzjL86bhrHPJ8FRtekVUFdgFqxXdA5LEt9eQoRYyodx9-tNFRvpRsa5hfx7TNWMn0HyLbJEwuluVFKO21IuyHXtqI8PGVYe80M3qubpFIfxIOHasb_XCvCcaPJLnj-KPHND6BXF3WQ_gwxUHG0CvktMWr" />
+                </div>
+            </div>
+            <div class="flex gap-10 overflow-x-auto pb-12 hide-scrollbar snap-x">
+                <div class="flex-shrink-0 w-72 text-center snap-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-6 team-avatar-container">
+                        <div
+                            class="absolute inset-0 rounded-full border-2 border-accent/20 group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="absolute inset-2 rounded-full overflow-hidden">
+                            <img alt="Team" class="team-img w-full h-full object-cover transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxTTh2ovdzDHjuXdnz0PJaeiMVFOCuSiCXZDplFzxY964DII_lPGVLeW6VvtfFA5uhaW0zwdxxUbRZ7PxKvEDGanP1mOjQxRp3xNs8AXhLFcgKiGegHEVq9y4OQvZuhwC4ha6TDi7J4EI7b3JDVm4dngqf6DNtqXG0-eRNwDRT9R8qlH6aJvrCyo5G8Ev8ErOr9d03RedUPpAoW5Uz7xHIqQVDktPwbvcqz57j04ppW0-y61WDPl6ftaSH6sgV9l-2ogWVwLds0Sx" />
+                        </div>
+                        <div
+                            class="team-bio absolute inset-0 flex items-center justify-center p-4 text-xs font-medium opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">
+                            <p class="text-charcoal font-semibold bg-white/90 p-2 rounded-lg shadow-sm">Expert in Neural
+                                Networks and Scalable Cloud Arch.</p>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl text-charcoal">Arjun Mehta</h4>
+                    <p class="text-accent text-sm font-semibold uppercase tracking-widest mt-1">Lead AI Researcher</p>
+                </div>
+                <div class="flex-shrink-0 w-72 text-center snap-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-6 team-avatar-container">
+                        <div
+                            class="absolute inset-0 rounded-full border-2 border-accent/20 group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="absolute inset-2 rounded-full overflow-hidden">
+                            <img alt="Team" class="team-img w-full h-full object-cover transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh3HwAmTrQE9lF3RAbyUlc1aUzAlQplenxGUvN8gqYS2-peEcWHse9SACUQo6WHwrnFhtLchC4Isr8sP5uaDJdNi1sE6_1CSDyfMTnRdshpFkB0RIKGlSiI9dP4eroE1Y9fBsln6DQ_bDj3nuaH_xEY4iFRZXm5WhzqZX7IMHXcWc7oueAB6c3-DVzJmSpRHqAUcH7MTRqFerGL6T9U2elnRVyBWtyPVSsNWGCxRpb1bk2BzIo1NuvS6EseSVp6NPbxHyftL_ZHo7z" />
+                        </div>
+                        <div
+                            class="team-bio absolute inset-0 flex items-center justify-center p-4 text-xs font-medium opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">
+                            <p class="text-charcoal font-semibold bg-white/90 p-2 rounded-lg shadow-sm">Full-stack
+                                specialist with a focus on React and Go.</p>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl text-charcoal">Saira Khan</h4>
+                    <p class="text-accent text-sm font-semibold uppercase tracking-widest mt-1">Head of Engineering</p>
+                </div>
+                <div class="flex-shrink-0 w-72 text-center snap-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-6 team-avatar-container">
+                        <div
+                            class="absolute inset-0 rounded-full border-2 border-accent/20 group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="absolute inset-2 rounded-full overflow-hidden">
+                            <img alt="Team" class="team-img w-full h-full object-cover transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH0S5H48IDHlY2VfhNUhp89AfA8l8DkrmZCLDbUqDVKWUsBuj93moFgoLoZCs1OM3CROlHFeCTMAsEKyrQsIINNdr1do1wFRwKekauSZvjTnmi1UcgRUkDQwj9TELWhZ2BAE5KAm_AsRjyIe1k8oQU7Uwg0HYYRVBrP0lORx6GPWqZzjXjB-CrmJM77MvFhZZ6sSuhnt6T1cz7VhnKqWfDdTVphfgmrANnn3sP-NFxxzlTQBL3JepOWoHNqlGaeUyk9OieEtfDXqRR" />
+                        </div>
+                        <div
+                            class="team-bio absolute inset-0 flex items-center justify-center p-4 text-xs font-medium opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">
+                            <p class="text-charcoal font-semibold bg-white/90 p-2 rounded-lg shadow-sm">Infrastructure
+                                wizard managing global CI/CD pipelines.</p>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl text-charcoal">Vikram Das</h4>
+                    <p class="text-accent text-sm font-semibold uppercase tracking-widest mt-1">DevOps Lead</p>
+                </div>
+                <div class="flex-shrink-0 w-72 text-center snap-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-6 team-avatar-container">
+                        <div
+                            class="absolute inset-0 rounded-full border-2 border-accent/20 group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="absolute inset-2 rounded-full overflow-hidden">
+                            <img alt="Team" class="team-img w-full h-full object-cover transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKG_qBY3ZuBrP8P5FBCYdP_SfvsIg6W0zpCE3o81nQ5DPwHTUXfkbhQxG6wYISIkshLjeMM8rQ3KHtljmzNz_KgQs3j6h1ygrcuT3bqk8Ztp7q2OPM1kYsF15hTP6YohevNqyMITSwR1KWuP0ZKZ4QzBfK-4Jx5lZ3SiJvh9RvSyivBstZpbmDay8miijtnI7bhOmWGarGNQ2t7hi3xZskmQ3IQ1YukMBDor4RnbPZueWgQy0RsGqRYEpQEzOt6yyFajAHzjXxN4SP" />
+                        </div>
+                        <div
+                            class="team-bio absolute inset-0 flex items-center justify-center p-4 text-xs font-medium opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">
+                            <p class="text-charcoal font-semibold bg-white/90 p-2 rounded-lg shadow-sm">Bridging the gap
+                                between R&amp;D and business metrics.</p>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl text-charcoal">Priya Roy</h4>
+                    <p class="text-accent text-sm font-semibold uppercase tracking-widest mt-1">Strategic Research</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="neon-border rounded-[3rem] p-12 md:p-20 bg-white text-center relative overflow-hidden group">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent">
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-display text-5xl md:text-7xl mb-8 text-charcoal">Join Our Team</h2>
+                    <p class="text-xl text-charcoal/50 mb-12 max-w-2xl mx-auto">
+                        We're always looking for brilliant minds in Kolkata and beyond. Help us build the next
+                        generation of intelligent systems.
+                    </p>
+                    <button
+                        class="bg-charcoal text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2 mx-auto shadow-xl shadow-charcoal/10">
+                        View Open Positions
+                        <span class="material-symbols-outlined">north_east</span>
+                    </button>
+                </div>
+                <div
+                    class="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-50 blur-[80px] rounded-full group-hover:scale-150 transition-transform duration-1000">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-secondary/30 border-t border-black/5 py-20 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 bg-charcoal rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-xl">insights</span>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-charcoal">BlueBuck</span>
+                </div>
+                <p class="text-charcoal/40 text-sm">© 2024 BlueBuck Research Services. Built with precision.</p>
+            </div>
+            <div class="flex gap-10">
+                <a class="text-charcoal/50 hover:text-accent transition-colors" href="#">Twitter</a>
+                <a class="text-charcoal/50 hover:text-accent transition-colors" href="#">LinkedIn</a>
+                <a class="text-charcoal/50 hover:text-accent transition-colors" href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BlueBuck Teal Mega Footer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --primary-teal: #001a1a;
+            --accent-orange: #2a8d80;
+            --text-off-white: #f5f5f5;
+        }
+        @layer base {
+            body {
+                font-family: 'Manrope', sans-serif;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .footer-bg-gradient {
+            background: linear-gradient(180deg, #002b2b 0%, #001414 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white min-h-screen flex flex-col justify-end">
+    <main class="flex-grow flex items-center justify-center p-10 bg-slate-100">
+        <div class="text-center">
+            <h2 class="text-4xl font-extrabold tracking-tight mb-4 text-slate-800">Enterprise-Grade Infrastructure</h2>
+            <p class="text-slate-600 max-w-xl mx-auto">
+                Scroll down to see the mega footer design for BlueBuck, inspired by the reference layout.
+            </p>
+        </div>
+    </main>
+    <footer class="w-full footer-bg-gradient text-white pt-20 border-t border-teal-900/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tight">Get started today</h2>
+                <div class="mt-8 md:mt-0 flex group">
+                    <button
+                        class="bg-[var(--accent-orange)] hover:bg-[#1b655b] text-white px-8 py-4 font-bold uppercase tracking-wider text-sm flex items-center transition-colors">
+                        Book a Quick Call
+                    </button>
+                    <div
+                        class="bg-[var(--accent-orange)] hover:bg-[#1b655b] ml-[2px] p-4 flex items-center justify-center transition-colors">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative py-10 mb-16 border-b border-teal-800/30">
+                <div class="flex items-center gap-6 lg:gap-12">
+                    <div class="flex gap-2 lg:gap-4 shrink-0">
+                        <div class="w-4 lg:w-8 h-32 lg:h-56 bg-[var(--accent-orange)]"></div>
+                        <div class="w-4 lg:w-8 h-32 lg:h-56 bg-[var(--accent-orange)]"></div>
+                        <div class="w-4 lg:w-8 h-32 lg:h-56 bg-[var(--accent-orange)] transform skew-x-[-15deg]"></div>
+                        <div class="w-4 lg:w-8 h-32 lg:h-56 bg-[var(--accent-orange)] transform skew-x-[-15deg]"></div>
+                    </div>
+                    <h1
+                        class="text-[clamp(4rem,20vw,18rem)] font-extrabold leading-none tracking-tighter text-white select-none">
+                        bluebuck
+                    </h1>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-20">
+                <div class="md:col-span-3">
+                    <p class="text-teal-100/60 text-lg leading-snug">
+                        Transforming complex technology into seamless growth for the world's most ambitious companies.
+                    </p>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 text-white/40">Contact Us</h4>
+                    <div class="space-y-4 text-teal-50">
+                        <p class="leading-relaxed">
+                            Millenium Towers Unit: T-2 9C, Tower II, DN Block, Salt Lake, Sector V <br />
+                            Kolkata, West Bengal, India
+                        </p>
+                        <a class="block hover:text-[var(--accent-orange)] transition-colors"
+                            href="mailto:hello@bluebuck.tech">hello@bluebuck.tech</a>
+                    </div>
+                </div>
+                <div class="md:col-span-2 flex items-start">
+                    <div
+                        class="w-24 h-24 rounded-full border border-teal-800 flex items-center justify-center text-center p-2 bg-teal-900/40">
+                        <div class="text-[10px] leading-tight font-bold text-teal-100/40">
+                            PROJECTS<br />
+                            <span class="text-xs text-teal-100">SOC</span><br />
+                            SERVICES<br />
+                            ABOUT
+                            CONTACT
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 text-white/40">Stay Up To Date</h4>
+                    <form class="flex border border-teal-800 bg-black/20 p-1">
+                        <input
+                            class="bg-transparent border-none focus:ring-0 flex-grow text-white px-4 py-2 placeholder:text-teal-800"
+                            placeholder="Email Address" type="email" />
+                        <button
+                            class="bg-white text-black px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-teal-50 transition-colors"
+                            type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-teal-900 py-8 flex flex-col lg:flex-row justify-between items-center gap-8">
+                <nav class="flex flex-wrap justify-center gap-x-10 gap-y-4">
+                    <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-[var(--accent-orange)] transition-colors"
+                        href="#">Build</a>
+                    <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-[var(--accent-orange)] transition-colors"
+                        href="#">Services</a>
+                    <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-[var(--accent-orange)] transition-colors"
+                        href="#">Resources</a>
+                    <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-[var(--accent-orange)] transition-colors"
+                        href="#">About</a>
+                    <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-[var(--accent-orange)] transition-colors"
+                        href="#">Privacy</a>
+                </nav>
+                <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-100/30">
+                    © 2026 BlueBuck Research Services.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

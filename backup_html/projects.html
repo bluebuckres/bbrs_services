@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BlueBuck Research Services | Modern Project Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#050505",
+                        "card-bg": "#141414",
+                        accent: "#d8c7ff",
+                        "off-white": "#fcfaf2",
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        "xl": "1.5rem",
+                        "2xl": "2.5rem",
+                        "3xl": "3.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .serif-italic { font-style: italic; }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .portfolio-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-card:hover {
+            border-color: rgba(216, 199, 255, 0.4);
+            box-shadow: 0 0 30px rgba(216, 199, 255, 0.1);
+            transform: translateY(-4px);
+        }
+        .portfolio-card:hover img {
+            filter: blur(8px) brightness(0.4);
+            transform: scale(1.05);
+        }
+        .portfolio-card img {
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-form {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(216, 199, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        .conversion-bg {
+            background: radial-gradient(circle at 70% 50%, rgba(216, 199, 255, 0.08) 0%, transparent 60%);
+        }
+        .pulse-btn {
+            background: linear-gradient(135deg, #d8c7ff 0%, #a885ff 100%);
+            animation: soft-pulse 3s infinite;
+        }
+        @keyframes soft-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(216, 199, 255, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(216, 199, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(216, 199, 255, 0); }
+        }
+        .data-mesh-svg {
+            animation: float-mesh 20s infinite linear;
+        }
+        @keyframes float-mesh {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 1%) rotate(1deg); }
+            66% { transform: translate(-1%, 2%) rotate(-1deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 240px;
+            gap: 1.5rem;
+        }
+        .card-tall { grid-row: span 2; }
+        .card-wide { grid-column: span 2; }
+        .card-large { grid-column: span 2; grid-row: span 2; }
+        @media (max-width: 1024px) {
+            .masonry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .masonry-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+            .card-tall, .card-wide, .card-large { grid-column: span 1; grid-row: span 1; }
+        }
+    </style>
+</head>
+
+<body class="bg-primary text-gray-100 font-sans selection:bg-accent/30 transition-colors duration-300">
+    <nav class="fixed top-6 left-0 right-0 z-50 px-6">
+        <div class="max-w-7xl mx-auto glass-nav rounded-2xl py-4 px-8 flex items-center justify-between">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="w-9 h-9 bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-black text-xl">insights</span>
+                </div>
+                <span class="font-bold text-2xl tracking-tighter">BlueBuck</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium opacity-60 hover:opacity-100 transition-all" href="#">Portfolio</a>
+                <a class="text-sm font-medium opacity-60 hover:opacity-100 transition-all" href="#">Research</a>
+                <a class="text-sm font-medium opacity-60 hover:opacity-100 transition-all" href="#">Capabilities</a>
+                <a class="text-sm font-medium opacity-60 hover:opacity-100 transition-all" href="#">Contact</a>
+            </div>
+            <button
+                class="bg-white text-black px-6 py-2.5 rounded-xl text-sm font-bold hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Get in Touch
+            </button>
+        </div>
+    </nav>
+    <header class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="font-display text-7xl md:text-9xl tracking-tighter mb-6">
+                Selected <span class="serif-italic opacity-40">Works</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-xl opacity-50 font-light leading-relaxed">
+                High-fidelity research and engineering for industry leaders.
+                From quantum computing to AI infrastructure.
+            </p>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-6 pb-40">
+        <div class="masonry-grid">
+            <div class="portfolio-card card-large group rounded-3xl p-8 flex flex-col justify-end">
+                <img alt="Project preview" class="absolute inset-0 w-full h-full object-cover -z-10"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent -z-10"></div>
+                <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-2">
+                    <span
+                        class="text-[10px] font-bold uppercase tracking-widest bg-accent/20 text-accent px-3 py-1 rounded-full mb-4 inline-block">AI
+                        / ML</span>
+                    <h3 class="font-display text-5xl mb-2">AI Quant Platform</h3>
+                    <p class="opacity-60 text-sm max-w-sm">Algorithmic trading engine with sub-ms latency and predictive
+                        risk modeling.</p>
+                </div>
+                <span
+                    class="absolute bottom-8 right-8 text-3xl font-light opacity-60 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">↗</span>
+            </div>
+            <div class="portfolio-card card-tall group rounded-3xl p-6 flex flex-col justify-end">
+                <img alt="Project preview" class="absolute inset-0 w-full h-full object-cover -z-10"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent -z-10"></div>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-3 block">FinTech</span>
+                    <h3 class="font-display text-3xl mb-1">FinTech Mobile Core</h3>
+                </div>
+                <span class="absolute bottom-6 right-6 text-2xl font-light opacity-60">↗</span>
+            </div>
+            <div class="portfolio-card card-wide group rounded-3xl p-6 flex flex-col justify-end">
+                <div class="absolute inset-0 bg-neutral-900 -z-10"></div>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-3 block">SaaS</span>
+                    <h3 class="font-display text-4xl mb-1">Global DevOps Mesh</h3>
+                    <p class="opacity-50 text-xs">Self-healing infrastructure for distributed teams.</p>
+                </div>
+                <span class="absolute bottom-6 right-6 text-2xl font-light opacity-60">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/40 to-black -z-10"></div>
+                <div class="relative z-10">
+                    <span
+                        class="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2 block">Healthcare</span>
+                    <h3 class="font-display text-2xl mb-1">BioMed Data Hub</h3>
+                </div>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <div class="absolute inset-0 bg-gradient-to-bl from-purple-900/30 to-black -z-10"></div>
+                <h3 class="font-display text-2xl mb-1">Quantum Registry</h3>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+            <div class="portfolio-card card-tall group rounded-3xl p-6 flex flex-col justify-end">
+                <img alt="Project preview" class="absolute inset-0 w-full h-full object-cover -z-10"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBktSemHIcdO_JhRQQSMzToXK_pek6VD-UsxBT3TdVOhKJ10KKwP6Grp1kVbdmahZV05103gnT_h10MuNyTrbzEiPgpGt1pqjater-Pd-AnPKfLpWtVWbNbUyczdKXKJabC43-mHravI203E6nxfQ_AF9ISKd5-7b6uofL4VA-cEZW1Mqa-6a0lSczoDwhBafX5VD5PRjBOkfEpmuyFtBO-5cUt_lTQvbGbqD_7LX_Z58C-DNssaRS75JHqjUKuDsMB3_xSTzM2lJrf" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent -z-10"></div>
+                <h3 class="font-display text-3xl mb-1">Autonomous Fleet</h3>
+                <span class="absolute bottom-6 right-6 text-2xl font-light opacity-60">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <div class="absolute inset-0 bg-neutral-800/40 -z-10"></div>
+                <h3 class="font-display text-2xl mb-1">Cyber Arch</h3>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+            <div class="portfolio-card card-wide group rounded-3xl p-8 flex flex-col justify-end">
+                <div class="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent -z-10"></div>
+                <h3 class="font-display text-4xl mb-2">Neural Synth</h3>
+                <p class="opacity-50 text-sm">Generative audio workspace for creative professionals.</p>
+                <span class="absolute bottom-8 right-8 text-2xl font-light opacity-60">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <h3 class="font-display text-2xl mb-1">Edge Analytics</h3>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <h3 class="font-display text-2xl mb-1">OmniLedger</h3>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <h3 class="font-display text-2xl mb-1">Stratosphere CI</h3>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+            <div class="portfolio-card card-wide group rounded-3xl p-6 flex flex-col justify-end">
+                <img alt="Project preview" class="absolute inset-0 w-full h-full object-cover -z-10"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent -z-10"></div>
+                <h3 class="font-display text-4xl mb-1">Vision SDK</h3>
+                <span class="absolute bottom-6 right-6 text-2xl font-light opacity-60">↗</span>
+            </div>
+            <div class="portfolio-card group rounded-3xl p-6 flex flex-col justify-end">
+                <h3 class="font-display text-2xl mb-1">Core Ops</h3>
+                <span class="absolute bottom-6 right-6 text-xl font-light opacity-40">↗</span>
+            </div>
+        </div>
+    </main>
+    <section class="relative py-40 px-6 overflow-hidden bg-off-white text-primary">
+        <div class="absolute inset-0 conversion-bg pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h2 class="font-display text-7xl md:text-9xl leading-[0.85] tracking-tighter mb-12">
+                        Ready to build <br />
+                        <span class="serif-italic opacity-40">3x faster?</span>
+                    </h2>
+                    <ul class="space-y-8">
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1.5 w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-base font-bold text-primary">check</span>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-1 tracking-tight">Direct access to senior devs</h4>
+                                <p class="opacity-60 text-lg leading-relaxed">Skip the account managers. Work directly
+                                    with the minds building your architecture.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1.5 w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-base font-bold text-primary">check</span>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-1 tracking-tight">Zero hidden costs</h4>
+                                <p class="opacity-60 text-lg leading-relaxed">Fixed-scope excellence with transparent
+                                    timelines and no surprise line items.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1.5 w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-base font-bold text-primary">check</span>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-1 tracking-tight">Full IP ownership</h4>
+                                <p class="opacity-60 text-lg leading-relaxed">The code, the data, and the documentation
+                                    belong to you from day one.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-24 -z-10 opacity-30 pointer-events-none">
+                        <svg class="w-full h-full data-mesh-svg" viewBox="0 0 800 800"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="meshGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#d8c7ff;stop-opacity:0.8"></stop>
+                                    <stop offset="100%" style="stop-color:#8061ff;stop-opacity:0.1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path d="M100 100 L250 80 L400 150 L350 300 L150 250 Z" fill="none" stroke="url(#meshGrad)"
+                                stroke-width="0.5"></path>
+                            <path d="M400 150 L600 100 L750 250 L550 400 L350 300 Z" fill="none" stroke="url(#meshGrad)"
+                                stroke-width="0.5"></path>
+                            <path d="M150 250 L350 300 L300 550 L100 500 Z" fill="none" stroke="url(#meshGrad)"
+                                stroke-width="0.5"></path>
+                            <path d="M350 300 L550 400 L500 650 L250 600 Z" fill="none" stroke="url(#meshGrad)"
+                                stroke-width="0.5"></path>
+                            <circle cx="250" cy="80" fill="#d8c7ff" r="3"></circle>
+                            <circle cx="400" cy="150" fill="#d8c7ff" r="3"></circle>
+                            <circle cx="350" cy="300" fill="#d8c7ff" r="3"></circle>
+                            <circle cx="600" cy="100" fill="#d8c7ff" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="glass-form rounded-[3.5rem] p-12 relative overflow-hidden">
+                        <div class="flex justify-between items-center mb-12">
+                            <span class="text-xs font-bold uppercase tracking-[0.2em] opacity-40">Phase 01 — Project
+                                Context</span>
+                            <div class="flex gap-2">
+                                <div class="w-10 h-1 bg-primary rounded-full"></div>
+                                <div class="w-10 h-1 bg-black/5 rounded-full"></div>
+                            </div>
+                        </div>
+                        <form class="space-y-10">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="space-y-3">
+                                    <label class="text-xs font-bold uppercase tracking-widest opacity-50 ml-1">Full
+                                        Name</label>
+                                    <input
+                                        class="w-full bg-white/50 border-black/10 rounded-2xl px-7 py-5 focus:ring-accent focus:border-accent transition-all placeholder:text-black/20 text-lg font-medium"
+                                        placeholder="Marcus Wright" type="text" />
+                                </div>
+                                <div class="space-y-3">
+                                    <label class="text-xs font-bold uppercase tracking-widest opacity-50 ml-1">Company
+                                        Email</label>
+                                    <input
+                                        class="w-full bg-white/50 border-black/10 rounded-2xl px-7 py-5 focus:ring-accent focus:border-accent transition-all placeholder:text-black/20 text-lg font-medium"
+                                        placeholder="marcus@thames.ai" type="email" />
+                                </div>
+                            </div>
+                            <div class="space-y-5">
+                                <label class="text-xs font-bold uppercase tracking-widest opacity-50 ml-1">What are we
+                                    building?</label>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 p-2 bg-black/5 rounded-[1.75rem]">
+                                    <label class="cursor-pointer">
+                                        <input checked="" class="peer hidden" name="proj_type" type="radio" />
+                                        <div
+                                            class="py-3 text-center rounded-2xl text-xs font-bold opacity-60 peer-checked:bg-white peer-checked:opacity-100 peer-checked:shadow-lg transition-all border border-transparent peer-checked:border-accent/30">
+                                            AI</div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input class="peer hidden" name="proj_type" type="radio" />
+                                        <div
+                                            class="py-3 text-center rounded-2xl text-xs font-bold opacity-60 peer-checked:bg-white peer-checked:opacity-100 peer-checked:shadow-lg transition-all border border-transparent peer-checked:border-accent/30">
+                                            DevOps</div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input class="peer hidden" name="proj_type" type="radio" />
+                                        <div
+                                            class="py-3 text-center rounded-2xl text-xs font-bold opacity-60 peer-checked:bg-white peer-checked:opacity-100 peer-checked:shadow-lg transition-all border border-transparent peer-checked:border-accent/30">
+                                            Web</div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input class="peer hidden" name="proj_type" type="radio" />
+                                        <div
+                                            class="py-3 text-center rounded-2xl text-xs font-bold opacity-60 peer-checked:bg-white peer-checked:opacity-100 peer-checked:shadow-lg transition-all border border-transparent peer-checked:border-accent/30">
+                                            Other</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pt-6">
+                                <button
+                                    class="pulse-btn w-full py-6 text-black rounded-[1.75rem] font-bold text-xl flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-2xl shadow-accent/20"
+                                    type="button">
+                                    Start Your Journey
+                                    <span class="material-symbols-outlined font-bold">arrow_forward</span>
+                                </button>
+                                <p class="text-center mt-8 text-xs opacity-40 font-semibold tracking-wide uppercase">
+                                    Initial consultation is free — 3 slots left for Q4
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary text-white py-24 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
+                <div class="max-w-md">
+                    <div class="flex items-center gap-3 mb-10">
+                        <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                            <span class="material-symbols-outlined text-black text-2xl">insights</span>
+                        </div>
+                        <span class="font-bold text-3xl tracking-tighter">BlueBuck</span>
+                    </div>
+                    <p class="text-xl text-white/40 font-light leading-relaxed">
+                        A research-first engineering collective building the future of autonomous intelligence and
+                        high-scale infrastructure.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-20">
+                    <div>
+                        <h5 class="text-[10px] font-bold uppercase tracking-widest opacity-30 mb-8">Navigation</h5>
+                        <ul class="space-y-4 opacity-60 text-sm font-medium">
+                            <li><a class="hover:text-accent transition-colors" href="#">Portfolio</a></li>
+                            <li><a class="hover:text-accent transition-colors" href="#">Services</a></li>
+                            <li><a class="hover:text-accent transition-colors" href="#">Whitepapers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-[10px] font-bold uppercase tracking-widest opacity-30 mb-8">Social</h5>
+                        <ul class="space-y-4 opacity-60 text-sm font-medium">
+                            <li><a class="hover:text-accent transition-colors" href="#">LinkedIn</a></li>
+                            <li><a class="hover:text-accent transition-colors" href="#">Twitter</a></li>
+                            <li><a class="hover:text-accent transition-colors" href="#">Github</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-bold uppercase tracking-widest opacity-20">
+                <span>© 2024 BlueBuck Research Services</span>
+                <div class="flex gap-12">
+                    <a class="hover:opacity-100 transition-opacity" href="#">Privacy</a>
+                    <a class="hover:opacity-100 transition-opacity" href="#">Terms</a>
+                    <a class="hover:opacity-100 transition-opacity" href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

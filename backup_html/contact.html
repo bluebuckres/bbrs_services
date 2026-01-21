@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | BlueBuck Research Services</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        "background-light": "#fcfaf2",
+                        "background-dark": "#0a0a0a",
+                        accent: "#d8c7ff",
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        "xl": "1.5rem",
+                        "2xl": "2.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .serif-italic { font-style: italic; }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(252, 250, 242, 0.8);
+        }
+        .dark .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .dark .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(216, 199, 255, 0.15) 0%, transparent 70%);
+        }
+        .form-input {
+            @apply w-full bg-white/50 border-black/10 rounded-xl focus:border-accent focus:ring-accent transition-all px-4 py-3;
+        }
+        .dark .form-input {
+            @apply bg-white/5 border-white/10 text-white;
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(216, 199, 255, 0.3);
+        }
+        .glow-marker {
+            box-shadow: 0 0 15px rgba(216, 199, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-primary dark:text-gray-100 font-sans selection:bg-accent/30 transition-colors duration-300">
+    <div class="w-full bg-primary text-white py-2.5 text-center text-sm font-medium">
+        <span class="opacity-80">Ready to transform your infrastructure?</span>
+        <a class="underline underline-offset-4 ml-2 hover:opacity-100 transition-opacity" href="#">Book a technical
+            audit <span class="material-symbols-outlined align-middle text-sm">chevron_right</span></a>
+    </div>
+    <nav class="sticky top-6 z-50 px-6 mt-4">
+        <div
+            class="max-w-6xl mx-auto glass-nav border border-black/5 dark:border-white/5 rounded-2xl py-3 px-6 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.href='/'">
+                <div class="w-8 h-8 bg-primary dark:bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white dark:text-black text-xl">insights</span>
+                </div>
+                <span class="font-bold text-xl tracking-tight">BlueBuck</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all"
+                    href="index.html#services">Services</a>
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all"
+                    href="index.html#how-it-works">How We Work</a>
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all"
+                    href="index.html#case-study">Case Studies</a>
+                <a class="text-sm font-medium opacity-100 transition-all border-b border-primary/20"
+                    href="#">Contact</a>
+            </div>
+            <div>
+                <button
+                    class="bg-primary dark:bg-white dark:text-black text-white px-5 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="relative pt-20 pb-32">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] hero-gradient pointer-events-none -z-10">
+        </div>
+        <div class="max-w-6xl mx-auto px-6">
+            <header class="mb-20 text-center md:text-left">
+                <h1 class="font-display text-7xl md:text-[8rem] leading-[0.9] tracking-tighter mb-8 max-w-4xl">
+                    Let’s build something <span class="serif-italic opacity-40">exceptional.</span>
+                </h1>
+                <p class="text-lg md:text-xl opacity-60 max-w-2xl leading-relaxed">
+                    Whether you're looking for AI integration, cloud transformation, or custom software, our
+                    research-driven approach ensures your project is built to lead.
+                </p>
+            </header>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-5 space-y-16">
+                    <section>
+                        <h2 class="text-xs font-bold tracking-[0.3em] uppercase opacity-30 mb-8">Global Operations</h2>
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-center justify-between group p-4 rounded-2xl hover:bg-white/40 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-display">London, UK</span>
+                                    <span
+                                        class="text-xs px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded-full flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Open
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium opacity-60">09:00 — 18:00</div>
+                                    <div class="text-xs opacity-40 uppercase tracking-wider">Current 14:32</div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center justify-between group p-4 rounded-2xl hover:bg-white/40 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-display">San Francisco, USA</span>
+                                    <span
+                                        class="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 rounded-full flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Closing soon
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium opacity-60">08:00 — 17:00</div>
+                                    <div class="text-xs opacity-40 uppercase tracking-wider">Current 06:32</div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center justify-between group p-4 rounded-2xl hover:bg-white/40 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-display">Dubai, UAE</span>
+                                    <span
+                                        class="text-xs px-2 py-0.5 bg-neutral-100 text-neutral-500 dark:bg-white/5 dark:text-white/40 rounded-full flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></span> Closed
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium opacity-60">09:00 — 18:00</div>
+                                    <div class="text-xs opacity-40 uppercase tracking-wider">Current 17:32</div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center justify-between group p-4 rounded-2xl hover:bg-white/40 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-display">Sydney, AU</span>
+                                    <span
+                                        class="text-xs px-2 py-0.5 bg-neutral-100 text-neutral-500 dark:bg-white/5 dark:text-white/40 rounded-full flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></span> Closed
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium opacity-60">08:00 — 17:00</div>
+                                    <div class="text-xs opacity-40 uppercase tracking-wider">Current 23:32</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="space-y-8">
+                        <div>
+                            <h2 class="text-xs font-bold tracking-[0.3em] uppercase opacity-30 mb-4">Direct Contact</h2>
+                            <a class="text-2xl font-medium hover:text-accent transition-colors"
+                                href="mailto:hello@bluebuck.research">hello@bluebuck.research</a>
+                        </div>
+                        <div>
+                            <h2 class="text-xs font-bold tracking-[0.3em] uppercase opacity-30 mb-4">Immediate Booking
+                            </h2>
+                            <a class="inline-flex items-center gap-2 group text-xl border-b border-primary/10 pb-1"
+                                href="#">
+                                Schedule a 15-min discovery call
+                                <span
+                                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-[2.5rem] p-10 md:p-14 shadow-2xl shadow-primary/5">
+                        <h2 class="font-display text-4xl mb-8">Project Inquiry</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium opacity-60">Full Name</label>
+                                    <input class="form-input" placeholder="John Doe" type="text" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium opacity-60">Company</label>
+                                    <input class="form-input" placeholder="Enterprise Inc." type="text" />
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium opacity-60">Service Interest</label>
+                                <select class="form-input appearance-none">
+                                    <option>AI &amp; Machine Learning</option>
+                                    <option>Custom App Development</option>
+                                    <option>DevOps &amp; Cloud Infrastructure</option>
+                                    <option>Technical Research &amp; Strategy</option>
+                                    <option>Cybersecurity Audit</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium opacity-60">Project Brief</label>
+                                <textarea class="form-input h-32 resize-none"
+                                    placeholder="Tell us about your objectives, timeline, and challenges..."></textarea>
+                            </div>
+                            <button
+                                class="w-full bg-primary dark:bg-white text-white dark:text-black py-5 rounded-2xl font-bold text-lg glow-button hover:scale-[1.01] transition-all active:scale-[0.99] flex items-center justify-center gap-3 mt-8">
+                                Submit Inquiry
+                                <span class="material-symbols-outlined">send</span>
+                            </button>
+                            <p class="text-center text-xs opacity-40 mt-4">Average response time: &lt; 4 hours during
+                                office hours.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="py-32 px-6 bg-white/40 dark:bg-white/5 border-t border-black/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="font-display text-5xl mb-4">Global Reach</h2>
+                <p class="opacity-60">Scaling engineering teams and infrastructure across 4 continents.</p>
+            </div>
+            <div
+                class="relative w-full aspect-[21/9] bg-neutral-100 dark:bg-neutral-900 rounded-[3rem] overflow-hidden group">
+                <img alt="World Map Minimalist" class="w-full h-full object-cover opacity-30 grayscale contrast-125"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                <div class="absolute top-[35%] left-[48%] group/marker">
+                    <div class="w-4 h-4 bg-accent rounded-full glow-marker animate-pulse"></div>
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover/marker:opacity-100 transition-opacity">
+                        London HQ</div>
+                </div>
+                <div class="absolute top-[40%] left-[18%] group/marker">
+                    <div class="w-4 h-4 bg-accent rounded-full glow-marker animate-pulse"></div>
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover/marker:opacity-100 transition-opacity">
+                        San Francisco</div>
+                </div>
+                <div class="absolute top-[55%] left-[62%] group/marker">
+                    <div class="w-4 h-4 bg-accent rounded-full glow-marker animate-pulse"></div>
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover/marker:opacity-100 transition-opacity">
+                        Dubai</div>
+                </div>
+                <div class="absolute top-[75%] left-[88%] group/marker">
+                    <div class="w-4 h-4 bg-accent rounded-full glow-marker animate-pulse"></div>
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover/marker:opacity-100 transition-opacity">
+                        Sydney</div>
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-light/50 dark:from-background-dark/50 to-transparent">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary text-white py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                            <span class="material-symbols-outlined text-black text-2xl">insights</span>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight">BlueBuck</span>
+                    </div>
+                    <p class="text-white/40 max-w-sm text-lg">
+                        Transforming complex technology into seamless growth for the world's most ambitious companies.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 opacity-60 uppercase text-xs tracking-widest">Platform</h4>
+                    <ul class="space-y-4 text-white/70">
+                        <li><a class="hover:text-white transition-colors" href="index.html#services">Services</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Solutions</a></li>
+                        <li><a class="hover:text-white transition-colors" href="index.html#case-study">Case Studies</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors" href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 opacity-60 uppercase text-xs tracking-widest">Connect</h4>
+                    <ul class="space-y-4 text-white/70">
+                        <li><a class="hover:text-white transition-colors" href="#">Twitter</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">LinkedIn</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">GitHub</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-white/20 text-sm">© 2024 BlueBuck Research Services. All rights reserved.</p>
+                <div class="flex gap-8 text-sm text-white/20">
+                    <a class="hover:text-white/60" href="#">Privacy Policy</a>
+                    <a class="hover:text-white/60" href="#">Terms of Service</a>
+                    <a class="hover:text-white/60" href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-white dark:bg-neutral-800 border border-black/10 dark:border-white/10 shadow-xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-xl hidden dark:block text-yellow-400">light_mode</span>
+    </button>
+
+</body>
+
+</html>
