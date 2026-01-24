@@ -6,7 +6,7 @@ export function Workflow() {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-20">
                     <div>
-                        <h2 className="font-display text-6xl mb-8 leading-tight">
+                        <h2 className="font-display text-4xl md:text-6xl mb-8 leading-tight">
                             Our Workflow <br />
                             <span className="serif-italic opacity-40">&amp; Methodology</span>
                         </h2>
@@ -33,7 +33,7 @@ export function Workflow() {
                             <div className="absolute left-0 w-12 h-12 bg-white border border-black/10 rounded-full flex items-center justify-center z-10 group-hover:bg-[#d8c7ff] group-hover:border-[#d8c7ff] transition-colors">
                                 <Search className="w-5 h-5" />
                             </div>
-                            <h3 className="font-display text-4xl mb-3">01. Discovery</h3>
+                            <h3 className="font-display text-2xl md:text-4xl mb-3">01. Discovery</h3>
                             <p className="opacity-60 leading-relaxed">
                                 We dive deep into your business requirements, existing tech debt, and long-term objectives to create a tailored roadmap.
                             </p>
@@ -43,7 +43,7 @@ export function Workflow() {
                             <div className="absolute left-0 w-12 h-12 bg-white border border-black/10 rounded-full flex items-center justify-center z-10 group-hover:bg-[#d8c7ff] group-hover:border-[#d8c7ff] transition-colors">
                                 <Layout className="w-5 h-5" />
                             </div>
-                            <h3 className="font-display text-4xl mb-3">02. Architecture</h3>
+                            <h3 className="font-display text-2xl md:text-4xl mb-3">02. Architecture</h3>
                             <p className="opacity-60 leading-relaxed">
                                 Designing scalable systems and robust data models. We build with the future in mind, ensuring your tech can grow as fast as you do.
                             </p>
@@ -53,7 +53,7 @@ export function Workflow() {
                             <div className="absolute left-0 w-12 h-12 bg-white border border-black/10 rounded-full flex items-center justify-center z-10 group-hover:bg-[#d8c7ff] group-hover:border-[#d8c7ff] transition-colors">
                                 <Code className="w-5 h-5" />
                             </div>
-                            <h3 className="font-display text-4xl mb-3">03. Rapid Execution</h3>
+                            <h3 className="font-display text-2xl md:text-4xl mb-3">03. Rapid Execution</h3>
                             <p className="opacity-60 leading-relaxed">
                                 Agile development cycles with continuous integration. You see results in weeks, not months.
                             </p>
@@ -63,7 +63,7 @@ export function Workflow() {
                             <div className="absolute left-0 w-12 h-12 bg-white border border-black/10 rounded-full flex items-center justify-center z-10 group-hover:bg-[#d8c7ff] group-hover:border-[#d8c7ff] transition-colors">
                                 <Zap className="w-5 h-5" />
                             </div>
-                            <h3 className="font-display text-4xl mb-3">04. Optimization</h3>
+                            <h3 className="font-display text-2xl md:text-4xl mb-3">04. Optimization</h3>
                             <p className="opacity-60 leading-relaxed">
                                 Constant monitoring and refinement post-launch to ensure peak performance and security compliance.
                             </p>

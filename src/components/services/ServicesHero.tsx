@@ -5,12 +5,12 @@ export function ServicesHero() {
     return (
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 bg-[#fcfaf2] dark:bg-[#0a0a0a] text-[#1a1a1a] dark:text-gray-100">
             <div className="max-w-4xl">
-                <h1 className="font-display text-8xl md:text-[10rem] leading-[0.85] tracking-tighter mb-8">
+                <h1 className="font-display text-5xl md:text-8xl lg:text-[10rem] leading-[0.85] tracking-tighter mb-8">
                     Driven by <br />
-                    <span className="serif-italic opacity-40">Curiosity.</span>
+                    <span className="serif-italic opacity-40">Code.</span>
                 </h1>
                 <p className="text-2xl md:text-3xl font-light opacity-70 tracking-tight">
-                    Build better, <span className="text-neon-purple font-semibold">3x faster.</span>
+                    Build products, <span className="text-neon-purple font-semibold">3x faster.</span>
                 </p>
                 <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6">
                     <div className="flex -space-x-4">

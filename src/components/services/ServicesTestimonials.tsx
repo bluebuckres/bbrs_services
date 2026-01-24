@@ -2,21 +2,21 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
     {
-        quote: "BlueBuck didn't just build a tool; they redefined our entire R&D pipeline. The ROI was visible within the first quarter.",
+        quote: "BlueBuck didn't just build software; they became our extended engineering team. Shipped our MVP in 9 weeks.",
         author: "Jonathan Vane",
         role: "CTO, NexaCorp",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBktSemHIcdO_JhRQQSMzToXK_pek6VD-UsxBT3TdVOhKJ10KKwP6Grp1kVbdmahZV05103gnT_h10MuNyTrbzEiPgpGt1pqjater-Pd-AnPKfLpWtVWbNbUyczdKXKJabC43-mHravI203E6nxfQ_AF9ISKd5-7b6uofL4VA-cEZW1Mqa-6a0lSczoDwhBafX5VD5PRjBOkfEpmuyFtBO-5cUt_lTQvbGbqD_7LX_Z58C-DNssaRS75JHqjUKuDsMB3_xSTzM2lJrf",
         aspect: "aspect-[3/4] w-[450px]"
     },
     {
-        quote: "The speed of execution is unlike anything we've seen in traditional consulting.",
+        quote: "The speed and code quality are unlike anything we've seen from traditional agencies.",
         author: "Sarah Jenkins",
         role: "VP Engineering, FlowState",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o",
         aspect: "aspect-[4/3] w-[500px]"
     },
     {
-        quote: "Technical brilliance paired with a deep understanding of business goals. They are our go-to partners.",
+        quote: "Technical excellence paired with product thinking. They understand both code and business.",
         author: "Marcus Thorne",
         role: "Founder, Astra AI",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o",

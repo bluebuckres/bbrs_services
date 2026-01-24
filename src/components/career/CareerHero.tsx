@@ -5,7 +5,7 @@ export function CareerHero() {
         <section className="max-w-7xl mx-auto px-6 pt-24 pb-32">
             <div className="grid grid-cols-12 gap-6 h-auto lg:h-[800px]">
                 <div className="col-span-12 lg:col-span-5 flex flex-col justify-center mb-12 lg:mb-0">
-                    <h1 className="font-display text-7xl md:text-8xl leading-[0.9] tracking-tighter mb-8">
+                    <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter mb-8">
                         Driven by <br />
                         <span className="serif-italic opacity-40">Curiosity.</span>
                     </h1>

@@ -1,132 +1,150 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-
-const offices = [
-    { city: "London, UK", status: "open", hours: "09:00 — 18:00", current: "14:32", statusColor: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400", dotColor: "bg-green-500" },
-    { city: "San Francisco, USA", status: "closing", hours: "08:00 — 17:00", current: "06:32", statusColor: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400", dotColor: "bg-amber-500" },
-    { city: "Dubai, UAE", status: "closed", hours: "09:00 — 18:00", current: "17:32", statusColor: "bg-neutral-100 text-neutral-500 dark:bg-white/5 dark:text-white/40", dotColor: "bg-neutral-400" },
-    { city: "Sydney, AU", status: "closed", hours: "08:00 — 17:00", current: "23:32", statusColor: "bg-neutral-100 text-neutral-500 dark:bg-white/5 dark:text-white/40", dotColor: "bg-neutral-400" },
-];
+"use client";
+import { ArrowRight, ArrowUpRight, CheckCircle2, Copy, Mail, MessageSquare } from "lucide-react";
+import { useState } from "react";
 
 export function ContactHero() {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText("hello@bluebuck.research");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
     return (
-        <main className="relative pt-20 pb-32 bg-background-light dark:bg-background-dark text-[#1a1a1a] dark:text-gray-100">
-            <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none -z-10"
-                style={{ background: "radial-gradient(circle at 50% 50%, rgba(216, 199, 255, 0.15) 0%, transparent 70%)" }}
-            />
-            <div className="max-w-6xl mx-auto px-6">
-                {/* Header */}
-                <header className="mb-20 text-center md:text-left">
-                    <h1 className="font-display text-7xl md:text-[8rem] leading-[0.9] tracking-tighter mb-8 max-w-4xl">
-                        Let&apos;s build something <span className="serif-italic opacity-40">exceptional.</span>
-                    </h1>
-                    <p className="text-lg md:text-xl opacity-60 max-w-2xl leading-relaxed">
-                        Whether you&apos;re looking for AI integration, cloud transformation, or custom software, our
-                        research-driven approach ensures your project is built to lead.
-                    </p>
-                </header>
+        <section className="relative pt-24 pb-20 px-6 overflow-hidden">
+            {/* Background Elements matching Home Hero */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] bg-hero-gradient pointer-events-none -z-10 opacity-50" />
 
-                {/* Grid: Left (Offices + Contact) | Right (Form) */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                    {/* Left Column */}
-                    <div className="lg:col-span-5 space-y-16">
-                        {/* Global Operations */}
-                        <section>
-                            <h2 className="text-xs font-bold tracking-[0.3em] uppercase opacity-30 mb-8">Global Operations</h2>
-                            <div className="space-y-6">
-                                {offices.map((office) => (
-                                    <div
-                                        key={office.city}
-                                        className="flex items-center justify-between group p-4 rounded-2xl hover:bg-white/40 dark:hover:bg-white/5 transition-colors"
-                                    >
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-2xl font-display">{office.city}</span>
-                                            <span className={`text-xs px-2 py-0.5 ${office.statusColor} rounded-full flex items-center gap-1`}>
-                                                <span className={`w-1.5 h-1.5 ${office.dotColor} rounded-full`} />
-                                                {office.status === "open" ? "Open" : office.status === "closing" ? "Closing soon" : "Closed"}
-                                            </span>
-                                        </div>
-                                        <div className="text-right">
-                                            <div className="text-sm font-medium opacity-60">{office.hours}</div>
-                                            <div className="text-xs opacity-40 uppercase tracking-wider">Current {office.current}</div>
-                                        </div>
+            <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+
+                    {/* LEFT COLUMN: Context & Direct Info */}
+                    <div className="relative z-10 pt-8">
+                        <div className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-700 dark:text-emerald-400 text-xs font-mono font-medium tracking-wide uppercase">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            Accepting New Projects
+                        </div>
+
+                        <h1 className="font-display text-4xl md:text-5xl lg:text-7xl leading-[0.95] tracking-tighter mb-8 text-[#0a0a0a] dark:text-white">
+                            Let's engineer <br />
+                            <span className="serif-italic opacity-40">the future.</span>
+                        </h1>
+
+                        <p className="text-lg md:text-xl opacity-60 max-w-lg leading-relaxed mb-12">
+                            Have a complex technical challenge? We specialize in translating ambiguity into high-performance software architecture.
+                        </p>
+
+                        {/* Contact Methods Bento */}
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            {/* Email Card */}
+                            <div className="group bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/10 p-6 rounded-2xl hover:border-emerald-500/30 transition-all cursor-pointer" onClick={handleCopy}>
+                                <div className="flex justify-between items-start mb-8">
+                                    <div className="p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl text-emerald-700 dark:text-emerald-400">
+                                        <Mail className="w-6 h-6" />
                                     </div>
-                                ))}
+                                    {copied ? (
+                                        <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                                    ) : (
+                                        <Copy className="w-5 h-5 opacity-40 group-hover:opacity-100 transition-opacity" />
+                                    )}
+                                </div>
+                                <p className="text-xs font-mono opacity-50 uppercase tracking-wider mb-1">Email us</p>
+                                <p className="text-lg font-medium truncate">hello@bluebuck.research</p>
                             </div>
-                        </section>
 
-                        {/* Direct Contact */}
-                        <section className="space-y-8">
-                            <div>
-                                <h2 className="text-xs font-bold tracking-[0.3em] uppercase opacity-30 mb-4">Direct Contact</h2>
-                                <a className="text-2xl font-medium hover:text-purple-accent transition-colors" href="mailto:hello@bluebuck.research">
-                                    hello@bluebuck.research
-                                </a>
-                            </div>
-                            <div>
-                                <h2 className="text-xs font-bold tracking-[0.3em] uppercase opacity-30 mb-4">Immediate Booking</h2>
-                                <Link href="#" className="inline-flex items-center gap-2 group text-xl border-b border-[#1a1a1a]/10 dark:border-white/10 pb-1">
-                                    Schedule a 15-min discovery call
-                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </Link>
-                            </div>
-                        </section>
+                            {/* Chat/Book Card */}
+                            <a href="#" className="group bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/10 p-6 rounded-2xl hover:bg-emerald-500/[0.03] hover:border-emerald-500/30 transition-all">
+                                <div className="flex justify-between items-start mb-8">
+                                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl text-blue-700 dark:text-blue-400">
+                                        <MessageSquare className="w-6 h-6" />
+                                    </div>
+                                    <ArrowUpRight className="w-5 h-5 opacity-40 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                </div>
+                                <p className="text-xs font-mono opacity-50 uppercase tracking-wider mb-1">Intro Call</p>
+                                <p className="text-lg font-medium">Book 15 mins</p>
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Right Column - Form */}
-                    <div className="lg:col-span-7">
-                        <div className="bg-white/40 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 rounded-[2.5rem] p-10 md:p-14 shadow-2xl shadow-[#1a1a1a]/5">
-                            <h2 className="font-display text-4xl mb-8">Project Inquiry</h2>
+                    {/* RIGHT COLUMN: The "Spec Sheet" Form */}
+                    <div className="relative">
+                        {/* Decorative back-layer */}
+                        <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-[2.5rem] blur-2xl -z-10" />
+
+                        <div className="bg-white/80 dark:bg-[#111] backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-[2rem] p-8 md:p-10 shadow-2xl">
+                            <div className="flex items-center justify-between mb-8">
+                                <h3 className="text-xl font-display">Project Inquiry</h3>
+                                <span className="text-xs font-mono opacity-40">// SECURE_FORM_V2</span>
+                            </div>
+
                             <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium opacity-60">Full Name</label>
+                                        <label className="text-xs font-mono uppercase tracking-widest opacity-50">Name</label>
                                         <input
-                                            className="w-full bg-white/50 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 focus:border-purple-accent focus:ring-purple-accent transition-all"
-                                            placeholder="John Doe"
                                             type="text"
+                                            className="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-2 focus:border-emerald-500 focus:outline-none transition-colors text-lg"
+                                            placeholder="Jane Doe"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium opacity-60">Company</label>
+                                        <label className="text-xs font-mono uppercase tracking-widest opacity-50">Company</label>
                                         <input
-                                            className="w-full bg-white/50 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 focus:border-purple-accent focus:ring-purple-accent transition-all"
-                                            placeholder="Enterprise Inc."
                                             type="text"
+                                            className="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-2 focus:border-emerald-500 focus:outline-none transition-colors text-lg"
+                                            placeholder="Acme Corp"
                                         />
                                     </div>
                                 </div>
+
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium opacity-60">Service Interest</label>
-                                    <select className="w-full bg-white/50 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 appearance-none focus:border-purple-accent focus:ring-purple-accent transition-all">
-                                        <option>AI &amp; Machine Learning</option>
-                                        <option>Custom App Development</option>
-                                        <option>DevOps &amp; Cloud Infrastructure</option>
-                                        <option>Technical Research &amp; Strategy</option>
-                                        <option>Cybersecurity Audit</option>
-                                    </select>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium opacity-60">Project Brief</label>
-                                    <textarea
-                                        className="w-full bg-white/50 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 h-32 resize-none focus:border-purple-accent focus:ring-purple-accent transition-all"
-                                        placeholder="Tell us about your objectives, timeline, and challenges..."
+                                    <label className="text-xs font-mono uppercase tracking-widest opacity-50">Email Address</label>
+                                    <input
+                                        type="email"
+                                        className="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-2 focus:border-emerald-500 focus:outline-none transition-colors text-lg"
+                                        placeholder="jane@acme.com"
                                     />
                                 </div>
+
+                                <div className="space-y-4 pt-4">
+                                    <label className="text-xs font-mono uppercase tracking-widest opacity-50">I'm interested in...</label>
+                                    <div className="flex flex-wrap gap-2">
+                                        {["AI Integration", "Cloud Infrastructure", "Custom SaaS", "Tech Audit", "MVP Build"].map((tag) => (
+                                            <label key={tag} className="cursor-pointer">
+                                                <input type="checkbox" className="peer sr-only" />
+                                                <span className="inline-block px-4 py-2 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-sm hover:border-emerald-500/50 peer-checked:bg-emerald-500 peer-checked:text-white peer-checked:border-emerald-500 transition-all">
+                                                    {tag}
+                                                </span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2 pt-4">
+                                    <label className="text-xs font-mono uppercase tracking-widest opacity-50">Project Details</label>
+                                    <textarea
+                                        className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/10 rounded-xl p-4 h-32 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none transition-all resize-none"
+                                        placeholder="Tell us about the problem you're solving..."
+                                    />
+                                </div>
+
                                 <button
                                     type="button"
-                                    className="w-full bg-[#1a1a1a] dark:bg-white text-white dark:text-black py-5 rounded-2xl font-bold text-lg hover:scale-[1.01] transition-all active:scale-[0.99] flex items-center justify-center gap-3 mt-8 shadow-[0_0_20px_rgba(216,199,255,0.3)]"
+                                    className="w-full group bg-[#1a1a1a] dark:bg-white text-white dark:text-black py-4 rounded-xl font-medium text-lg hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-3 mt-4"
                                 >
-                                    Submit Inquiry
-                                    <ArrowRight className="w-5 h-5" />
+                                    Inititate Request
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </button>
-                                <p className="text-center text-xs opacity-40 mt-4">Average response time: &lt; 4 hours during office hours.</p>
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </main>
+        </section>
     );
 }

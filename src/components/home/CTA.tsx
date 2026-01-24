@@ -8,7 +8,7 @@ export function CTA() {
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <h2 className="font-display text-6xl md:text-8xl leading-[0.9] tracking-tighter mb-10">
+                        <h2 className="font-display text-4xl md:text-6xl lg:text-8xl leading-[0.9] tracking-tighter mb-10">
                             Ready to build <br />
                             <span className="serif-italic opacity-40 text-emerald-900">
                                 3x faster?
@@ -92,7 +92,7 @@ export function CTA() {
                                     <label className="text-sm font-semibold opacity-60 ml-1">
                                         Project Type
                                     </label>
-                                    <div className="grid grid-cols-3 gap-2 p-1.5 bg-emerald-50 rounded-[1.25rem]">
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 p-1.5 bg-emerald-50 rounded-[1.25rem]">
                                         <label className="cursor-pointer">
                                             <input
                                                 defaultChecked

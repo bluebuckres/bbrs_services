@@ -5,7 +5,7 @@ export function Services() {
         <section className="py-24 px-6" id="services">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-16">
-                    <h2 className="font-display text-6xl mb-4">Core Services</h2>
+                    <h2 className="font-display text-4xl md:text-6xl mb-4">Core Services</h2>
                     <p className="text-lg opacity-60 max-w-xl">
                         Deep technical expertise tailored for modern enterprise needs.
                     </p>
@@ -14,7 +14,7 @@ export function Services() {
                     <div className="md:col-span-2 bento-card mint-glow p-10 rounded-3xl relative overflow-hidden group border border-emerald/10">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full -mr-20 -mt-20"></div>
                         <Bot className="w-10 h-10 mb-6 text-emerald-600" />
-                        <h3 className="font-display text-4xl mb-4">AI & Machine Learning</h3>
+                        <h3 className="font-display text-2xl md:text-4xl mb-4">AI & Machine Learning</h3>
                         <p className="opacity-70 max-w-md mb-8">
                             Custom LLM fine-tuning, RAG implementations, and predictive
                             analytics that actually drive ROI.
@@ -34,7 +34,7 @@ export function Services() {
                     <div className="bento-card mint-glow p-10 rounded-3xl flex flex-col justify-between border border-emerald/10">
                         <div>
                             <Terminal className="w-10 h-10 mb-6 text-emerald-600" />
-                            <h3 className="font-display text-4xl mb-4">App Dev</h3>
+                            <h3 className="font-display text-2xl md:text-4xl mb-4">App Dev</h3>
                             <p className="opacity-70">
                                 High-performance web and mobile applications built with the
                                 latest stack.

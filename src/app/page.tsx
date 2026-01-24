@@ -8,10 +8,12 @@ import { FeaturedCaseStudy } from "@/components/home/FeaturedCaseStudy";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FAQ } from "@/components/home/FAQ";
 import { CTA } from "@/components/home/CTA";
+import { TechSpotlight } from "@/components/ui/TechSpotlight";
+
 
 export default function Home() {
   return (
-    <>
+    <TechSpotlight className="min-h-screen bg-background-light dark:bg-background-dark">
       <Hero />
       <Metrics />
       <Services />
@@ -22,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <CTA />
-    </>
+    </TechSpotlight>
   );
 }
+

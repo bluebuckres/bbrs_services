@@ -5,7 +5,7 @@ export function ServicesImpact() {
     return (
         <section className="py-32 bg-[#1a1a1a] text-white overflow-hidden" id="portfolio">
             <div className="max-w-7xl mx-auto px-6">
-                <h2 className="font-display text-7xl mb-24">Recent Impacts.</h2>
+                <h2 className="font-display text-7xl mb-24">Recent Projects.</h2>
                 <div className="space-y-32">
                     {/* Case Study 1 */}
                     <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -18,13 +18,16 @@ export function ServicesImpact() {
                         </div>
                         <div>
                             <span className="text-neon-purple font-mono tracking-widest uppercase text-sm mb-4 block">
-                                FinTech • ROI: +240%
+                                FinTech Platform • ROI: +240%
                             </span>
                             <h3 className="text-5xl font-display mb-6 italic leading-tight text-white/90">
-                                Autonomous Risk Assessment for Global Banking.
+                                Built Autonomous Risk Assessment for Global Banking
                             </h3>
-                            <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                                Reduced credit approval latency from 48 hours to 15 seconds using proprietary ensemble models.
+                            <p className="text-lg text-white/50 mb-6 leading-relaxed">
+                                Developed a real-time credit scoring engine that reduced approval latency from 48 hours to 15 seconds using ensemble ML models and microservices architecture.
+                            </p>
+                            <p className="text-sm text-white/40 font-mono mb-8">
+                                <span className="text-neon-purple">Tech Stack:</span> Python, TensorFlow, Kubernetes, PostgreSQL
                             </p>
                             <Button variant="link" className="text-white hover:text-neon-purple p-0 h-auto font-bold group">
                                 Read Case Study
@@ -44,13 +47,16 @@ export function ServicesImpact() {
                         </div>
                         <div className="md:order-1">
                             <span className="text-neon-purple font-mono tracking-widest uppercase text-sm mb-4 block">
-                                Logistics • ROI: +180%
+                                Logistics SaaS • ROI: +180%
                             </span>
                             <h3 className="text-5xl font-display mb-6 italic leading-tight text-white/90">
-                                Supply Chain Optimization with Real-time IoT.
+                                Developed Supply Chain Intelligence Platform
                             </h3>
-                            <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                                Integrated 50k+ sensors into a single predictive dashboard, eliminating inventory wastage.
+                            <p className="text-lg text-white/50 mb-6 leading-relaxed">
+                                Built an IoT-integrated dashboard connecting 50k+ sensors with predictive analytics, eliminating $2M in annual inventory waste.
+                            </p>
+                            <p className="text-sm text-white/40 font-mono mb-8">
+                                <span className="text-neon-purple">Tech Stack:</span> React, Node.js, AWS IoT, ClickHouse
                             </p>
                             <Button variant="link" className="text-white hover:text-neon-purple p-0 h-auto font-bold group">
                                 Read Case Study
@@ -70,13 +76,16 @@ export function ServicesImpact() {
                         </div>
                         <div>
                             <span className="text-neon-purple font-mono tracking-widest uppercase text-sm mb-4 block">
-                                HealthTech • ROI: +310%
+                                HealthTech MVP • ROI: +310%
                             </span>
                             <h3 className="text-5xl font-display mb-6 italic leading-tight text-white/90">
-                                Precision Diagnosis through Distributed AI.
+                                Shipped Precision Diagnostic Tool in 10 Weeks
                             </h3>
-                            <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                                Partnered with top clinics to deliver a diagnostic tool with 99.4% accuracy across 12 pathologies.
+                            <p className="text-lg text-white/50 mb-6 leading-relaxed">
+                                Partnered with medical clinics to develop an AI diagnostic platform achieving 99.4% accuracy across 12 pathologies—from prototype to FDA submission.
+                            </p>
+                            <p className="text-sm text-white/40 font-mono mb-8">
+                                <span className="text-neon-purple">Tech Stack:</span> PyTorch, FastAPI, React Native, Azure ML
                             </p>
                             <Button variant="link" className="text-white hover:text-neon-purple p-0 h-auto font-bold group">
                                 Read Case Study

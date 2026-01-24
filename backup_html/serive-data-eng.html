@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Data Engineering | BlueBuck Research Services</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        "background-light": "#fcfaf2",
+                        "background-dark": "#0a0a0a",
+                        accent: "#d8c7ff",
+                        "neon-purple": "#b088ff",
+                        "matte-black": "#0d0d0d",
+                        "blackish-gray": "#181818",
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        "xl": "1.5rem",
+                        "2xl": "2.5rem",
+                        "3xl": "3.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .serif-italic { font-style: italic; }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(252, 250, 242, 0.8);
+        }
+        .dark .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+        }
+        .bento-visual-card {
+            background: linear-gradient(135deg, rgba(216, 199, 255, 0.05) 0%, rgba(176, 136, 255, 0.1) 100%);
+            border: 1px solid rgba(176, 136, 255, 0.2);
+        }
+        .neon-glow-text {
+            text-shadow: 0 0 15px rgba(176, 136, 255, 0.4);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #b088ff 0%, transparent 100%);
+        }
+        .capability-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .capability-card:hover {
+            border-color: #b088ff;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-primary dark:text-gray-100 font-sans selection:bg-accent/30 transition-colors duration-300">
+    <nav class="fixed top-6 z-50 w-full px-6">
+        <div
+            class="max-w-6xl mx-auto glass-nav border border-black/5 dark:border-white/5 rounded-2xl py-3 px-6 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 bg-primary dark:bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white dark:text-black text-xl">database</span>
+                </div>
+                <span class="font-bold text-xl tracking-tight">BlueBuck</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all" href="#">Solutions</a>
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all" href="#">Engineering</a>
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all" href="#">Research</a>
+                <a class="text-sm font-medium opacity-70 hover:opacity-100 transition-all" href="#">About</a>
+            </div>
+            <div>
+                <button
+                    class="bg-primary dark:bg-white dark:text-black text-white px-5 py-2 rounded-xl text-sm font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    Start a Project
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="min-h-screen flex items-center pt-24 pb-12 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6">
+                    <h1 class="font-display text-8xl md:text-9xl leading-[0.85] tracking-tight mb-8">
+                        Data <br />
+                        <span class="serif-italic opacity-40">Engineering</span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl font-light text-primary/80 dark:text-white/80 leading-snug max-w-xl">
+                        Build unbreakable data foundations that fuel real-time decisions, AI innovation, and explosive
+                        growth.
+                    </p>
+                </div>
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4 h-[600px]">
+                    <div class="bento-visual-card rounded-3xl col-span-1 row-span-2 overflow-hidden relative">
+                        <img alt="Data Nodes" class="w-full h-full object-cover opacity-60 mix-blend-overlay"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                        <div class="absolute inset-0 flex flex-col justify-end p-8">
+                            <span class="material-symbols-outlined text-neon-purple text-4xl mb-4">hub</span>
+                            <p class="text-sm font-bold uppercase tracking-widest opacity-40">Resilient Pipelines</p>
+                        </div>
+                    </div>
+                    <div class="bento-visual-card rounded-3xl col-span-1 row-span-1 overflow-hidden relative">
+                        <img alt="Interconnected structures" class="w-full h-full object-cover opacity-40 grayscale"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent">
+                        </div>
+                    </div>
+                    <div
+                        class="bento-visual-card rounded-3xl col-span-1 row-span-1 overflow-hidden relative bg-matte-black border-neon-purple/30">
+                        <img alt="Abstract Storage" class="w-full h-full object-cover opacity-30"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBktSemHIcdO_JhRQQSMzToXK_pek6VD-UsxBT3TdVOhKJ10KKwP6Grp1kVbdmahZV05103gnT_h10MuNyTrbzEiPgpGt1pqjater-Pd-AnPKfLpWtVWbNbUyczdKXKJabC43-mHravI203E6nxfQ_AF9ISKd5-7b6uofL4VA-cEZW1Mqa-6a0lSczoDwhBafX5VD5PRjBOkfEpmuyFtBO-5cUt_lTQvbGbqD_7LX_Z58C-DNssaRS75JHqjUKuDsMB3_xSTzM2lJrf" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-6xl text-neon-purple/50">layers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-matte-black text-white py-32 md:py-48 px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="font-display text-5xl md:text-7xl leading-tight mb-12">
+                    In the agentic era, we engineer pipelines that are <span class="serif-italic text-accent">reliable,
+                        AI-ready, and scalable</span>—turning chaotic data into your most strategic asset.
+                </h2>
+                <div class="inline-block px-8 py-4 rounded-full border border-white/10 bg-white/5">
+                    <span class="text-neon-purple font-bold text-2xl">Unlock 40-70% faster insights.</span>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div class="max-w-2xl">
+                        <span class="text-neon-purple font-bold tracking-widest uppercase text-sm mb-4 block">Our
+                            Expertise</span>
+                        <h2 class="font-display text-6xl">Core Capabilities</h2>
+                    </div>
+                    <p class="opacity-50 max-w-sm mb-2">Architecting the future of data infrastructure with precision
+                        and performance at scale.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="capability-card bg-blackish-gray p-12 rounded-[2.5rem] border border-white/5 group">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-purple/10 flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl text-neon-purple">rebase_edit</span>
+                        </div>
+                        <h3 class="text-white text-3xl font-bold mb-6">Data Pipeline Development</h3>
+                        <p class="text-white/60 text-lg leading-relaxed mb-8">
+                            End-to-end, resilient pipelines... streaming-first and fully automated. Incorporating
+                            observability to achieve 99.99% uptime and 50%+ reduction in latency.
+                        </p>
+                        <div class="flex items-center gap-2 text-neon-purple font-semibold">
+                            <span>01 — Infrastructure</span>
+                        </div>
+                    </div>
+                    <div class="capability-card bg-blackish-gray p-12 rounded-[2.5rem] border border-white/5 group">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-purple/10 flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl text-neon-purple">cloud_done</span>
+                        </div>
+                        <h3 class="text-white text-3xl font-bold mb-6">Big Data Management</h3>
+                        <p class="text-white/60 text-lg leading-relaxed mb-8">
+                            Master petabyte-scale chaos with lakehouse dominance and data mesh principles. Drive 3x
+                            faster AI readiness and massive ROI.
+                        </p>
+                        <div class="flex items-center gap-2 text-neon-purple font-semibold">
+                            <span>02 — Scalability</span>
+                        </div>
+                    </div>
+                    <div class="capability-card bg-blackish-gray p-12 rounded-[2.5rem] border border-white/5 group">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-purple/10 flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl text-neon-purple">alt_route</span>
+                        </div>
+                        <h3 class="text-white text-3xl font-bold mb-6">ETL Processes</h3>
+                        <p class="text-white/60 text-lg leading-relaxed mb-8">
+                            Modern ELT/ETL evolution... replacing legacy with code-first, version-controlled pipelines.
+                            Slash manual fixes by 80% and ensure audit-ready compliance.
+                        </p>
+                        <div class="flex items-center gap-2 text-neon-purple font-semibold">
+                            <span>03 — Modernization</span>
+                        </div>
+                    </div>
+                    <div class="capability-card bg-blackish-gray p-12 rounded-[2.5rem] border border-white/5 group">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-purple/10 flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl text-neon-purple">warehouse</span>
+                        </div>
+                        <h3 class="text-white text-3xl font-bold mb-6">Data Warehousing</h3>
+                        <p class="text-white/60 text-lg leading-relaxed mb-8">
+                            High-performance, governed warehouses... serverless, elastic, and AI-integrated. Reduce TCO
+                            by 30-50% and position your org as AI-first.
+                        </p>
+                        <div class="flex items-center gap-2 text-neon-purple font-semibold">
+                            <span>04 — Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 bg-background-light dark:bg-background-dark border-y border-black/5 dark:border-white/5">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-24">
+                    <h2 class="font-display text-6xl mb-6">The Data Blueprint</h2>
+                    <p class="opacity-60 text-xl">Our systematic approach to engineering excellence.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute left-8 top-0 bottom-0 w-px timeline-line opacity-30"></div>
+                    <div class="space-y-24">
+                        <div class="relative flex gap-12 items-start">
+                            <div
+                                class="w-16 h-16 rounded-full bg-matte-black text-white flex items-center justify-center flex-shrink-0 z-10 border-4 border-background-light dark:border-background-dark">
+                                <span class="font-bold">01</span>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-display mb-4">Assessment</h3>
+                                <p class="opacity-60 text-lg leading-relaxed">Evaluating legacy debt and identifying
+                                    high-impact data opportunities within your existing ecosystem.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex gap-12 items-start">
+                            <div
+                                class="w-16 h-16 rounded-full bg-neon-purple text-white flex items-center justify-center flex-shrink-0 z-10 border-4 border-background-light dark:border-background-dark">
+                                <span class="font-bold">02</span>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-display mb-4">Architecture</h3>
+                                <p class="opacity-60 text-lg leading-relaxed">Designing cloud-native, mesh-aligned
+                                    blueprints that guarantee scalability for the next decade of growth.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex gap-12 items-start">
+                            <div
+                                class="w-16 h-16 rounded-full bg-matte-black text-white flex items-center justify-center flex-shrink-0 z-10 border-4 border-background-light dark:border-background-dark">
+                                <span class="font-bold">03</span>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-display mb-4 text-neon-purple">Build</h3>
+                                <p class="opacity-60 text-lg leading-relaxed">Rapid implementation of code-first
+                                    pipelines with automated testing and rigorous data quality checks.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex gap-12 items-start">
+                            <div
+                                class="w-16 h-16 rounded-full bg-matte-black text-white flex items-center justify-center flex-shrink-0 z-10 border-4 border-background-light dark:border-background-dark">
+                                <span class="font-bold">04</span>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-display mb-4">Optimize</h3>
+                                <p class="opacity-60 text-lg leading-relaxed">Tuning compute costs, storage tiers, and
+                                    query execution for maximum performance at minimum TCO.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex gap-12 items-start">
+                            <div
+                                class="w-16 h-16 rounded-full bg-matte-black text-white flex items-center justify-center flex-shrink-0 z-10 border-4 border-background-light dark:border-background-dark">
+                                <span class="font-bold">05</span>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-display mb-4">Monitor</h3>
+                                <p class="opacity-60 text-lg leading-relaxed">Continuous observability through real-time
+                                    dashboards and automated alerting systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-6 py-40">
+            <div
+                class="bg-matte-black text-white rounded-[3.5rem] p-12 md:p-24 relative overflow-hidden flex flex-col items-center text-center">
+                <div class="absolute -top-24 -right-24 w-[500px] h-[500px] bg-neon-purple/20 blur-[120px] rounded-full">
+                </div>
+                <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-accent/10 blur-[100px] rounded-full">
+                </div>
+                <div class="relative z-10">
+                    <span class="text-neon-purple font-bold tracking-widest uppercase text-sm mb-8 block">Ready to
+                        scale?</span>
+                    <h2 class="font-display text-6xl md:text-8xl mb-12 leading-tight">
+                        Launch Your <br />
+                        <span class="serif-italic">Data-Powered Future.</span>
+                    </h2>
+                    <button
+                        class="bg-white text-black px-12 py-6 rounded-2xl font-bold text-xl hover:bg-neon-purple hover:text-white transition-all shadow-[0_0_30px_rgba(176,136,255,0.3)] flex items-center gap-4 mx-auto">
+                        Consult with our Data Architects
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                    <p class="mt-12 text-white/40 text-sm tracking-widest uppercase">Trusted by Fortune 500 Engineering
+                        Teams</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-matte-black text-white pt-32 pb-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-32">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                            <span class="material-symbols-outlined text-black text-2xl">database</span>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight">BlueBuck</span>
+                    </div>
+                    <p class="text-white/40 max-w-sm text-lg leading-relaxed">
+                        The elite data engineering collective. Building the foundations for the next era of computing.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 opacity-60 uppercase text-xs tracking-widest">Offices</h4>
+                    <ul class="space-y-4 text-white/70">
+                        <li>New York, US</li>
+                        <li>London, UK</li>
+                        <li>Singapore</li>
+                        <li>Sydney, AU</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 opacity-60 uppercase text-xs tracking-widest">Follow</h4>
+                    <div class="flex gap-4">
+                        <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined">terminal</span>
+                        </a>
+                        <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined">hub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 opacity-30">
+                <p class="text-sm">© 2024 BlueBuck Research Services. All rights reserved.</p>
+                <div class="flex gap-8 text-sm">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Engineering Ethics</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-white dark:bg-neutral-800 border border-black/10 dark:border-white/10 shadow-xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-xl hidden dark:block text-yellow-400">light_mode</span>
+    </button>
+
+</body>
+
+</html>

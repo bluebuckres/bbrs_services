@@ -33,8 +33,8 @@ export function Hero() {
                     <span className="serif-italic shimmer-text">3x faster.</span>
                 </h1>
                 <p className="max-w-2xl mx-auto text-lg md:text-xl opacity-70 leading-relaxed mb-12">
-                    BlueBuck Research Services transforms complex tech into seamless 
-                    growth — from AI consulting to DevOps and custom SaaS solutions.
+                    We engineer elite digital infrastructure for scale-ups. From autonomous
+                    AI systems to high-performance SaaS, we build the technology that powers your next leap.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Button className="w-full sm:w-auto text-lg py-6 px-8 rounded-2xl">

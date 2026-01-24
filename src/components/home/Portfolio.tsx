@@ -11,9 +11,9 @@ export function Portfolio() {
     return (
         <section className="py-24 px-6" id="portfolio">
             <div className="max-w-6xl mx-auto">
-                <div className="mb-16 flex justify-between items-end">
+                <div className="mb-16 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
                     <div>
-                        <h2 className="font-display text-6xl mb-4">Top 3 Projects</h2>
+                        <h2 className="font-display text-4xl md:text-6xl mb-4">Top 3 Projects</h2>
                         <p className="text-lg opacity-60">
                             Success stories defined by high speed and higher ROI.
                         </p>
@@ -69,7 +69,7 @@ export function Portfolio() {
                                         </span>
                                     </div>
                                 </div>
-                                <h3 className="font-display text-5xl text-white mb-4 leading-[1.1]">
+                                <h3 className="font-display text-3xl md:text-5xl text-white mb-4 leading-[1.1]">
                                     AI Vision: Automating Retail Intelligence
                                 </h3>
                                 <p className="text-mint/70 text-base max-w-sm">
