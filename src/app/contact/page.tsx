@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactMap } from "@/components/contact/ContactMap";
-
+import { WorldClockSection } from "@/components/world-clock/WorldClockSection";
 export const metadata: Metadata = {
   title: "Book a Discovery Call — BlueBuck Research",
   description:
@@ -20,7 +20,7 @@ export default function ContactPage() {
     return (
         <>
             <ContactHero />
-            <ContactMap />
+            <WorldClockSection />
         </>
     );
 }

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock — BlueBuck Dark Atlas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #030712;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .label {
+            color: rgba(148, 163, 184, 0.5);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        /* Section */
+        .world-clock {
+            position: relative;
+            width: 100%;
+            background: #080c14;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Map */
+        .map-area {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .map-area svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Cards scroll row */
+        .cards-row {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .cards-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cards-row {
+            scrollbar-width: none;
+        }
+
+        /* Individual card */
+        .clock-card {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            min-width: 165px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: border-color 0.2s;
+        }
+
+        .clock-card:hover {
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .clock-card.reference {
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.07));
+            border-color: rgba(99, 102, 241, 0.38);
+        }
+
+        /* Clock SVG */
+        .clock-svg {
+            width: 110px;
+            height: 110px;
+        }
+
+        /* City info */
+        .city-name {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+
+        .city-time {
+            color: #93c5fd;
+            font-size: 12px;
+            font-family: ui-monospace, monospace;
+            margin-top: 2px;
+            text-align: center;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .meta {
+            text-align: center;
+        }
+
+        .offset {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .reference .offset {
+            color: #818cf8;
+        }
+
+        .sun-row {
+            font-size: 10px;
+            color: #475569;
+            margin-top: 3px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        /* Glow divider between map and cards */
+        .glow-sep {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(99, 130, 246, 0.35), transparent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="label">BlueBuck Research · Global Availability</p>
+        <div class="world-clock">
+            <div class="map-area" id="map-container"></div>
+            <div class="glow-sep"></div>
+            <div class="cards-row" id="cards-row"></div>
+        </div>
+    </div>
+
+    <script>
+        const CITIES = [
+            { id: "kolkata", name: "Kolkata", tz: "Asia/Kolkata", lat: 22.5726, lng: 88.3639, ref: true },
+            { id: "london", name: "London", tz: "Europe/London", lat: 51.5074, lng: -0.1278, ref: false },
+            { id: "dubai", name: "Dubai", tz: "Asia/Dubai", lat: 25.2048, lng: 55.2708, ref: false },
+            { id: "losangeles", name: "Los Angeles", tz: "America/Los_Angeles", lat: 34.0522, lng: -118.2437, ref: false },
+            { id: "singapore", name: "Singapore", tz: "Asia/Singapore", lat: 1.3521, lng: 103.8198, ref: false },
+        ];
+
+        const KOL_OFFSET = 5.5 * 60; // IST offset in minutes
+
+        function getZoneDate(tz) {
+            const now = new Date();
+            const parts = new Intl.DateTimeFormat("en-US", {
+                timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit",
+                hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+            }).formatToParts(now);
+            const p = {};
+            parts.forEach(({ type, value }) => p[type] = value);
+            const h = p.hour === "24" ? "00" : p.hour;
+            return new Date(`${p.year}-${p.month}-${p.day}T${h}:${p.minute}:${p.second}`);
+        }
+
+        function formatTime(tz) {
+            return new Intl.DateTimeFormat("en-US", {
+                timeZone: tz, hour: "numeric", minute: "2-digit", hour12: true
+            }).format(new Date());
+        }
+
+        function getOffset(tz) {
+            const now = new Date();
+            const kolDate = getZoneDate("Asia/Kolkata");
+            const cityDate = getZoneDate(tz);
+            const diffMin = Math.round((cityDate - kolDate) / 60000);
+            if (diffMin === 0) return "Reference";
+            const sign = diffMin > 0 ? "+" : "-";
+            const abs = Math.abs(diffMin);
+            const h = Math.floor(abs / 60);
+            const m = abs % 60;
+            return `Today, ${sign}${h}${m ? `:${m.toString().padStart(2, "0")}` : ""} HRS`;
+        }
+
+        function getSunTimes(lat, lng) {
+            const now = new Date();
+            const doy = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+            const decl = -23.45 * Math.cos((360 / 365) * (doy + 10) * Math.PI / 180);
+            const latR = lat * Math.PI / 180, decR = decl * Math.PI / 180;
+            const cosH = -Math.tan(latR) * Math.tan(decR);
+            const ha = cosH < -1 ? 180 : cosH > 1 ? 0 : Math.acos(cosH) * 180 / Math.PI;
+            const utcOff = lng / 15;
+            const toStr = h => {
+                const tot = Math.round(((h % 24 + 24) % 24) * 60);
+                const hh = Math.floor(tot / 60) % 24, mm = tot % 60;
+                return `${hh % 12 || 12}:${mm.toString().padStart(2, "0")} ${hh >= 12 ? "PM" : "AM"}`;
+            };
+            return { sunrise: toStr(12 - ha / 15 - utcOff), sunset: toStr(12 + ha / 15 - utcOff) };
+        }
+
+        function isDaytime(lat, lng) {
+            const now = new Date();
+            const utcH = now.getUTCHours() + now.getUTCMinutes() / 60;
+            const solar = (utcH + lng / 15 + 24) % 24;
+            return solar >= 6 && solar < 20;
+        }
+
+        // ─── Map Builder ─────────────────────────────────────────────────────────────
+        function latLng(lat, lng) {
+            return { x: ((lng + 180) / 360) * 1000, y: ((90 - lat) / 180) * 500 };
+        }
+
+        function buildNightPath() {
+            const now = new Date();
+            const doy = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+            const decl = -23.45 * Math.cos((360 / 365) * (doy + 10) * Math.PI / 180) * Math.PI / 180;
+            const utcH = now.getUTCHours() + now.getUTCMinutes() / 60;
+            const noonLng = 180 - utcH * 15;
+            const pts = [];
+            for (let lng = -180; lng <= 180; lng += 2) {
+                const ha = ((lng - noonLng) * Math.PI) / 180;
+                const sinLat = -Math.cos(ha) * Math.tan(decl);
+                const tLat = Math.asin(Math.max(-1, Math.min(1, sinLat))) * 180 / Math.PI;
+                pts.push(latLng(tLat, lng));
+            }
+            const isNS = decl > 0;
+            const ey = isNS ? 500 : 0;
+            return `M0,${ey} L${pts[0].x},${pts[0].y} ${pts.map(p => `${p.x},${p.y}`).join(" ")} L1000,${ey} Z`;
+        }
+
+        function buildMap() {
+            const nightPath = buildNightPath();
+
+            const continents = `
+    <path d="M75,60 L190,55 L200,70 L220,90 L210,130 L185,160 L165,200 L140,220 L120,210 L95,180 L80,150 L65,120 L60,90 Z"/>
+    <path d="M140,235 L190,225 L210,250 L220,290 L215,340 L195,390 L165,410 L145,400 L125,360 L120,310 L130,270 Z"/>
+    <path d="M430,50 L510,45 L530,65 L525,85 L505,95 L480,100 L455,90 L435,75 Z"/>
+    <path d="M440,120 L510,115 L545,145 L555,200 L550,270 L530,330 L495,365 L465,360 L440,320 L425,260 L425,190 L435,150 Z"/>
+    <path d="M530,45 L700,40 L780,55 L820,75 L810,110 L770,130 L720,140 L670,150 L620,145 L580,130 L550,110 L535,85 Z"/>
+    <path d="M520,30 L750,20 L850,30 L870,50 L820,65 L780,55 L700,40 L530,45 Z"/>
+    <path d="M600,145 L645,142 L660,175 L655,215 L635,240 L610,235 L590,205 L585,170 Z"/>
+    <path d="M720,140 L790,135 L810,155 L800,175 L770,180 L740,170 L720,158 Z"/>
+    <path d="M760,295 L870,285 L910,310 L920,355 L895,390 L845,400 L790,385 L755,350 L750,315 Z"/>
+    <path d="M230,20 L300,15 L320,30 L310,55 L275,65 L240,55 L220,40 Z"/>
+    <path d="M818,90 L840,85 L850,100 L840,115 L820,115 L810,100 Z"/>
+  `;
+
+            const gridLines = [-60, -30, 0, 30, 60].map(lat => {
+                const y = ((90 - lat) / 180) * 500;
+                return `<line x1="0" y1="${y}" x2="1000" y2="${y}" stroke="rgba(99,130,200,0.07)" stroke-width="0.5"/>`;
+            }).join("") + [-120, -60, 0, 60, 120].map(lng => {
+                const x = ((lng + 180) / 360) * 1000;
+                return `<line x1="${x}" y1="0" x2="${x}" y2="500" stroke="rgba(99,130,200,0.07)" stroke-width="0.5"/>`;
+            }).join("");
+
+            let cityMarkersHtml = "";
+            CITIES.forEach((city, i) => {
+                const { x, y } = latLng(city.lat, city.lng);
+                const isRef = city.ref;
+                const isDay = isDaytime(city.lat, city.lng);
+                const dotColor = isRef ? "#818cf8" : isDay ? "#facc15" : "#94a3b8";
+                const ringColor = isRef ? "rgba(129,140,248,0.3)" : isDay ? "rgba(250,204,21,0.25)" : "rgba(148,163,184,0.2)";
+                const t = formatTime(city.tz);
+                const nameLen = city.name.length * 6.5 + 10;
+                const delay = (i * 0.6).toFixed(1);
+
+                cityMarkersHtml += `
+      <g>
+        <circle cx="${x}" cy="${y}" r="8" fill="none" stroke="${ringColor}" stroke-width="1">
+          <animate attributeName="r" values="5;18;5" dur="3s" repeatCount="indefinite" begin="${delay}s"/>
+          <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" begin="${delay}s"/>
+        </circle>
+        <circle cx="${x}" cy="${y}" r="4" fill="${dotColor}" opacity="0.95"/>
+        <circle cx="${x}" cy="${y}" r="1.8" fill="white" opacity="0.95"/>
+        <rect x="${x + 8}" y="${y - 19}" width="${nameLen}" height="26" rx="4"
+          fill="rgba(6,12,28,0.85)"
+          stroke="${isRef ? "rgba(129,140,248,0.4)" : "rgba(255,255,255,0.08)"}"
+          stroke-width="0.7"/>
+        <text x="${x + 13}" y="${y - 6}" font-size="8" font-family="system-ui,-apple-system,sans-serif"
+          font-weight="600" fill="${isRef ? "#a5b4fc" : "rgba(255,255,255,0.9)"}"
+          letter-spacing="0.3">${city.name}</text>
+        <text x="${x + 13}" y="${y + 5}" font-size="7.5" font-family="ui-monospace,monospace"
+          fill="${isDay ? "rgba(250,204,21,0.85)" : "rgba(148,163,184,0.8)"}">${t}</text>
+      </g>`;
+            });
+
+            return `
+  <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#060d1f"/>
+        <stop offset="100%" stop-color="#020608"/>
+      </linearGradient>
+      <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="10" cy="10" r="0.7" fill="rgba(99,130,200,0.2)"/>
+      </pattern>
+      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#060d1f" stop-opacity="0.35"/>
+        <stop offset="40%" stop-color="transparent" stop-opacity="0"/>
+        <stop offset="80%" stop-color="#080c14" stop-opacity="0.65"/>
+        <stop offset="100%" stop-color="#080c14" stop-opacity="1"/>
+      </linearGradient>
+    </defs>
+    <rect width="1000" height="500" fill="url(#bg)"/>
+    <rect width="1000" height="500" fill="url(#dots)"/>
+    <g fill="rgba(22,42,80,0.6)" stroke="rgba(50,90,150,0.28)" stroke-width="0.6">${continents}</g>
+    <path d="${nightPath}" fill="rgba(2,5,15,0.42)"/>
+    ${gridLines}
+    ${cityMarkersHtml}
+    <rect width="1000" height="500" fill="url(#fade)"/>
+  </svg>`;
+        }
+
+        // ─── Analog Clock SVG ────────────────────────────────────────────────────────
+        function buildClock(date, isRef) {
+            const h = date.getHours() % 12;
+            const m = date.getMinutes();
+            const s = date.getSeconds();
+            const cx = 55, cy = 55, r = 50;
+
+            const hand = (deg, len) => {
+                const rad = (deg - 90) * Math.PI / 180;
+                return { x: cx + Math.cos(rad) * len, y: cy + Math.sin(rad) * len };
+            };
+
+            const hDeg = h * 30 + m * 0.5;
+            const mDeg = m * 6 + s * 0.1;
+            const sDeg = s * 6;
+            const hp = hand(hDeg, 26), mp = hand(mDeg, 36), sp = hand(sDeg, 40);
+
+            const accent = isRef ? "#818cf8" : "#60a5fa";
+            const rim = isRef ? "rgba(99,102,241,0.55)" : "rgba(255,255,255,0.1)";
+
+            let ticks = "";
+            for (let i = 0; i < 60; i++) {
+                const isMaj = i % 5 === 0;
+                const rad = (i * 6 - 90) * Math.PI / 180;
+                const ir = isMaj ? r - 9 : r - 5;
+                const or = r - 1;
+                ticks += `<line x1="${cx + Math.cos(rad) * ir}" y1="${cy + Math.sin(rad) * ir}"
+      x2="${cx + Math.cos(rad) * or}" y2="${cy + Math.sin(rad) * or}"
+      stroke="${isMaj ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.16)"}"
+      stroke-width="${isMaj ? 1.4 : 0.7}" stroke-linecap="round"/>`;
+            }
+
+            const nums = [{ l: "12", d: 0 }, { l: "3", d: 90 }, { l: "6", d: 180 }, { l: "9", d: 270 }].map(({ l, d }) => {
+                const rad = (d - 90) * Math.PI / 180; const dist = r - 16;
+                return `<text x="${cx + Math.cos(rad) * dist}" y="${cy + Math.sin(rad) * dist + 3.5}"
+      text-anchor="middle" font-size="7.5" font-family="system-ui,sans-serif"
+      fill="rgba(255,255,255,0.4)" font-weight="500">${l}</text>`;
+            }).join("");
+
+            return `<svg width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="face-${isRef ? 'r' : 's'}" cx="40%" cy="35%">
+        <stop offset="0%" stop-color="${isRef ? "#1a2550" : "#111827"}"/>
+        <stop offset="100%" stop-color="${isRef ? "#0d1535" : "#060c1a"}"/>
+      </radialGradient>
+    </defs>
+    <circle cx="${cx}" cy="${cy}" r="${r + 2}" fill="none" stroke="${rim}" stroke-width="1.5"/>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#face-${isRef ? 'r' : 's'})"/>
+    ${ticks}${nums}
+    <line x1="${cx}" y1="${cy}" x2="${hp.x}" y2="${hp.y}" stroke="rgba(255,255,255,0.88)" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="${cx}" y1="${cy}" x2="${mp.x}" y2="${mp.y}" stroke="rgba(255,255,255,0.72)" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="${cx}" y1="${cy}" x2="${sp.x}" y2="${sp.y}" stroke="${accent}" stroke-width="1.1" stroke-linecap="round"/>
+    <circle cx="${cx}" cy="${cy}" r="3" fill="${accent}"/>
+    <circle cx="${cx}" cy="${cy}" r="1.4" fill="white"/>
+  </svg>`;
+        }
+
+        // ─── Render cards ─────────────────────────────────────────────────────────────
+        function renderCards() {
+            const row = document.getElementById("cards-row");
+            row.innerHTML = CITIES.map(city => {
+                const date = getZoneDate(city.tz);
+                const t = formatTime(city.tz);
+                const offset = getOffset(city.tz);
+                const { sunrise, sunset } = getSunTimes(city.lat, city.lng);
+                const isDay = isDaytime(city.lat, city.lng);
+                const clockSvg = buildClock(date, city.ref);
+
+                return `
+      <div class="clock-card${city.ref ? " reference" : ""}">
+        ${clockSvg}
+        <div>
+          <div class="city-name">${city.name}</div>
+          <div class="city-time">${t}</div>
+        </div>
+        <div class="divider"></div>
+        <div class="meta">
+          <div class="offset">${offset}</div>
+          <div class="sun-row">
+            <span>🌅 ${sunrise}</span>
+            <span>🌇 ${sunset}</span>
+          </div>
+        </div>
+      </div>`;
+            }).join("");
+        }
+
+        // ─── Render map ──────────────────────────────────────────────────────────────
+        function renderMap() {
+            document.getElementById("map-container").innerHTML = buildMap();
+        }
+
+        // ─── Init & tick ─────────────────────────────────────────────────────────────
+        renderMap();
+        renderCards();
+        setInterval(() => { renderCards(); }, 1000);
+        setInterval(() => { renderMap(); }, 30000); // re-render map every 30s for time labels + night
+    </script>
+</body>
+
+</html>

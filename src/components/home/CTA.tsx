@@ -80,17 +80,28 @@ export function CTA() {
                 </p>
               </div>
 
-              {/* Neetocal embed */}
-              <div className="rounded-2xl overflow-hidden bg-white/50 dark:bg-white/5 border border-emerald/10 mb-6 min-h-[120px] flex items-center justify-center">
-                <div className="text-center py-8 px-4">
-                  <p className="text-xs font-semibold tracking-widest uppercase opacity-30 mb-4">Calendar</p>
-                  <Button asChild className="gap-2">
-                    <Link href="https://bluebuck-research.neetocal.com/meeting-with-bluebuck-research" target="_blank" rel="noopener noreferrer">
-                      Schedule via Neetocal
-                      <ArrowRight className="w-4 h-4" />
+              {/* Interactive Meeting Intent UI */}
+              <div className="rounded-2xl bg-white/50 dark:bg-white/5 border border-emerald/10 mb-6 p-6">
+                <p className="text-xs font-semibold tracking-widest uppercase opacity-40 mb-4 text-center">
+                  What's on your mind?
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                  {["AI Strategy & Integration", "Custom Web App", "Team Augmentation", "Just Exploring"].map((topic) => (
+                    <div 
+                      key={topic}
+                      className="text-xs text-center py-3 px-2 rounded-xl border border-emerald/10 bg-white/40 dark:bg-black/20 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-colors cursor-pointer"
+                    >
+                      {topic}
+                    </div>
+                  ))}
+                </div>
+                <div className="text-center">
+                  <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-500 text-white">
+                    <Link href="https://bluebuck-research.neetocal.com/meeting-with-bluebuck-research" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 whitespace-nowrap">
+                      <span>Find a time on Neetocal</span>
+                      <ArrowRight className="w-4 h-4 shrink-0" />
                     </Link>
                   </Button>
-                  <p className="text-[10px] opacity-25 mt-3">Opens in a new tab</p>
                 </div>
               </div>
 

@@ -45,7 +45,7 @@ export default function ProjectsPage() {
                     <h2 className="text-xl font-bold font-mono tracking-widest uppercase opacity-40 mb-8 border-b border-white/10 pb-4">Featured Engagements</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[280px]">
                         <ProjectCard
-                            size="large"
+                            size="wide"
                             title="MrMed.in"
                             category="HealthTech Platform"
                             image="/Project_Pic/MrMed_in.webp"
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
                             description="Serving patients across 3,500+ cities. Complete platform build from prescription upload to cold-chain delivery."
                         />
                         <ProjectCard
-                            size="large"
+                            size="wide"
                             title="TradeMade.in"
                             category="FinTech Trading App"
                             image="/Project_Pic/trademade.webp"
@@ -69,6 +69,30 @@ export default function ProjectsPage() {
                 <div>
                     <h2 className="text-xl font-bold font-mono tracking-widest uppercase opacity-40 mb-8 border-b border-white/10 pb-4">Client Case Studies</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+                        <ProjectCard
+                            title="Briventa Studio"
+                            category="Fashion E-Commerce (UK)"
+                            image="/Project_Pic/briventastudio.png"
+                            href="/projects/briventa"
+                            placeholderGradient="bg-gradient-to-br from-zinc-900/40 to-[#0a0a0a]"
+                            description="Shopify storefront build, multi-currency scaling, and high-performance engineering."
+                        />
+                        <ProjectCard
+                            title="SEAT & CUPRA Media Center"
+                            category="Automotive Media (Spain)"
+                            image="/Project_Pic/seat-cupra-mediacenter.png"
+                            href="/projects/seat-cupra"
+                            placeholderGradient="bg-gradient-to-br from-blue-900/40 to-[#0a0a0a]"
+                            description="Mission-critical media distribution infrastructure serving 500+ automotive journalists globally."
+                        />
+                        <ProjectCard
+                            title="Zipto"
+                            category="Hyperlogistics (Bhubaneswar)"
+                            image="/Project_Pic/zipto.png"
+                            href="/projects/zipto"
+                            placeholderGradient="bg-gradient-to-br from-emerald-900/40 to-[#0a0a0a]"
+                            description="Full-stack build and real-time tracking integration for Bhubaneswar's fastest local delivery network."
+                        />
                         <ProjectCard
                             title="Asteride"
                             category="Consumer App & Design"
@@ -203,9 +227,9 @@ export default function ProjectsPage() {
                                         </div>
                                     </div>
                                     <div className="pt-6">
-                                        <Button className="w-full py-8 text-black bg-gradient-to-br from-[#d8c7ff] to-[#a885ff] hover:shadow-[0_0_0_4px_rgba(216,199,255,0.4)] transition-all rounded-[1.75rem] text-xl font-bold">
-                                            Start Your Journey
-                                            <ArrowRight className="ml-3 w-6 h-6" />
+                                        <Button className="w-full py-8 text-black bg-gradient-to-br from-[#d8c7ff] to-[#a885ff] hover:shadow-[0_0_0_4px_rgba(216,199,255,0.4)] transition-all rounded-[1.75rem] text-xl font-bold flex items-center justify-center gap-2">
+                                            <span>Start Your Journey</span>
+                                            <ArrowRight className="w-6 h-6 shrink-0" />
                                         </Button>
                                     </div>
                                 </form>

@@ -220,5 +220,104 @@ export const caseStudies: CaseStudy[] = [
         "/Project_Pic/makeugc_app.webp"
       ]
     }
+  },
+  {
+    id: "08",
+    slug: "briventa",
+    client: "Briventa Studio",
+    headline: "Shopify Storefront Build, Performance Engineering & Ongoing Maintenance",
+    problem: "Briventa Studio is a UK-based women's fashion brand retailing across 28 countries in Europe, the UK, and the United States. The founder approached BlueBuck Research with a clear mandate: build a Shopify storefront that could scale across multiple currency regions while delivering a premium, editorial shopping experience. Free UK delivery, free US shipping, and a weekly 'New Styles' drop cycle meant the platform had to handle frequent catalogue updates without performance degradation.",
+    solution: [
+      "Built a fully custom Shopify theme from scratch — no off-the-shelf template. Every section was engineered for conversion and editorial brand expression.",
+      "Architected multi-currency, multi-region support covering 28 countries across EUR, GBP, and USD zones using Shopify Markets.",
+      "Built the 'Shop by Category' structure across 9 distinct product collections — Dresses, Tops & Blouses, Jackets, Sweaters, Jumpsuits, Co-ord Sets, Trousers, Under-£25, and Bestsellers.",
+      "Engineered a high-performance image delivery pipeline using Shopify CDN with responsive srcset — page load time under 2.1 seconds on 4G mobile.",
+      "Set up the Style Journal blog — an SEO-driven content hub driving organic discovery for fashion-intent keywords in the UK and US.",
+      "Integrated Facebook, Pinterest, and Instagram social channels into the storefront experience for shoppable content.",
+      "Set up and maintain ongoing weekly product uploads, promotional banners, and seasonal sale configurations.",
+      "Built and maintain the customer authentication and wishlist flows with persistent cart across regions."
+    ],
+    outcome: [
+      "Countries: 28 (Multi-region live)",
+      "Page Speed: <2.1s (Mobile 4G)",
+      "Collections: 9 (Zero template used)",
+      "Uptime: 99.9% (Since launch)"
+    ],
+    tags: ["E-Commerce", "Shopify", "Performance"],
+    geography: "United Kingdom",
+    stack: ["Shopify", "Liquid", "React"],
+    testimonial: {
+      quote: "The team built exactly what we envisioned — a store that feels premium without the premium agency price tag. New styles go live every week without a hitch. The multi-currency rollout, which we were dreading, was completely seamless.",
+      name: "Founder",
+      role: "Founder @ Briventa Studio",
+      image: "/Founder_Pic/default.webp"
+    },
+    diagramType: "none",
+    images: {
+      hero: "/Project_Pic/briventastudio.png",
+      gallery: []
+    }
+  },
+  {
+    id: "09",
+    slug: "seat-cupra",
+    client: "SEAT & CUPRA Media Center",
+    headline: "Press Infrastructure Build, Asset Distribution Platform & Ongoing Maintenance",
+    problem: "SEAT S.A. — the only automaker to design, develop, manufacture, and sell vehicles entirely in Spain — needed a dedicated media center platform to serve automotive journalists, content creators, and brand partners across the globe. The platform had to function as the authoritative source for SEAT and CUPRA press releases, high-resolution vehicle photography, launch videos, and brand assets. Given SEAT's position within the Volkswagen Group and its role heading the Electric Urban Car Family initiative (a €10B investment into Spain's electrification), the platform needed to support high-concurrency access during major global vehicle launches.",
+    solution: [
+      "Built the full SEAT S.A. Media Center web platform — designed for press, journalists, and brand partners globally.",
+      "Engineered a copyright-free asset distribution system with structured categories: press releases, photos, videos, and brand documents — all downloadable for editorial use.",
+      "Built a high-performance search and filter layer capable of handling concurrent access by 500+ automotive journalists during model launch events.",
+      "Architected the content pipeline for CUPRA and SEAT press releases covering Formula E, design collaborations with MAM, and quarterly financials (Q1 2026: €43M operating profit).",
+      "Integrated press release scheduling and embargo systems — content goes live at precise global launch timestamps.",
+      "Maintained the platform across multiple vehicle launches: CUPRA Raval, CUPRA Tavascan Black Edition, SEAT Ibiza/Arona electric family, and the CUPRA KIRO Formula E programme.",
+      "Handled infrastructure scaling during the Electric Urban Car Family announcement — SEAT's largest press event in a decade.",
+      "Ongoing monthly maintenance contract covering uptime monitoring, asset uploads, and press gallery management."
+    ],
+    outcome: [
+      "Journalists Served: 500+ (Concurrent at launch)",
+      "Brands Covered: 2 (SEAT & CUPRA)",
+      "Launch Events: 6+ (Zero downtime)",
+      "Asset Types: 4 (Photos · Video · PR · Docs)"
+    ],
+    tags: ["Enterprise", "Media Infrastructure", "Scaling"],
+    geography: "Spain",
+    stack: ["Next.js", "Node.js", "AWS"],
+    diagramType: "none",
+    images: {
+      hero: "/Project_Pic/seat-cupra-mediacenter.png",
+      gallery: []
+    }
+  },
+  {
+    id: "10",
+    slug: "zipto",
+    client: "Zipto",
+    headline: "Full-Stack Website Build, Brand Identity Engineering & Ongoing Maintenance",
+    problem: "Zipto is a Bhubaneswar-based last-mile logistics and delivery company (similar to Porter), building fast, reliable local delivery infrastructure for businesses and individuals across Odisha. The founder came to BlueBuck Research with a strong operational product — real-time tracking, flexible fleet management, transparent pricing — but no digital presence worthy of the proposition. The brief was clear: build a website that communicates speed, reliability, and technological sophistication to both enterprise clients looking to outsource last-mile delivery and individual users who need same-day parcel movement.",
+    solution: [
+      "Designed and built the complete Zipto website from zero — brand positioning, visual identity direction, page architecture, copywriting, and code.",
+      "Wrote the full website copy using a 'speed-first' narrative framework — every headline is built around delivery velocity, reliability metrics, and fleet flexibility.",
+      "Engineered the site on a modern stack with sub-1.8 second load time — critical for India's mobile-first user base.",
+      "Built three distinct value proposition sections targeting B2B clients (businesses outsourcing delivery), SME merchants (e-commerce last-mile), and individual users (parcel and personal delivery).",
+      "Integrated real-time tracking UX patterns into the marketing experience — users understand the product capability before signing up.",
+      "Implemented structured data and on-page SEO foundation targeting Bhubaneswar last-mile and local delivery keywords.",
+      "Set up analytics infrastructure — conversion funnels tracking business enquiry vs individual user intent separately.",
+      "Monthly maintenance covering content updates, pricing page management, and performance monitoring."
+    ],
+    outcome: [
+      "Load Time: <1.8s (Mobile 4G)",
+      "Market: Bhubaneswar, Odisha",
+      "User Segments: 3 (B2B · SME · Individual)",
+      "SEO Setup: Day 1 (Structured data live)"
+    ],
+    tags: ["Logistics", "Web Dev", "Branding"],
+    geography: "Bhubaneswar, India",
+    stack: ["React", "Next.js", "SEO"],
+    diagramType: "none",
+    images: {
+      hero: "/Project_Pic/zipto.png",
+      gallery: []
+    }
   }
 ];
