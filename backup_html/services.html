@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BlueBuck Research Services | High-ROI Engineering</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        "background-light": "#fcfaf2",
+                        "background-dark": "#0a0a0a",
+                        accent: "#d8c7ff",
+                        "neon-purple": "#b088ff",
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        "xl": "1.5rem",
+                        "2xl": "2.5rem",
+                        "3xl": "3.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .serif-italic { font-style: italic; }
+            .glass-nav {
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                background: rgba(252, 250, 242, 0.8);
+            }
+            .dark .glass-nav {
+                background: rgba(10, 10, 10, 0.8);
+            }
+            .glass-card {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(16px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .dark .glass-card {
+                background: rgba(255, 255, 255, 0.05);
+            }
+            .neon-text-glow {
+                text-shadow: 0 0 10px rgba(176, 136, 255, 0.5);
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-primary dark:text-gray-100 font-sans selection:bg-accent/30 transition-colors duration-300">
+    <nav class="fixed top-6 left-0 right-0 z-50 px-6">
+        <div
+            class="max-w-7xl mx-auto glass-nav border border-black/5 dark:border-white/5 rounded-2xl py-3 px-6 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 bg-primary dark:bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white dark:text-black text-xl">insights</span>
+                </div>
+                <span class="font-bold text-xl tracking-tight">BlueBuck</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-xs font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all"
+                    href="#services">Services</a>
+                <a class="text-xs font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all"
+                    href="#portfolio">Work</a>
+                <a class="text-xs font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all"
+                    href="#testimonials">Clients</a>
+                <a class="text-xs font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all"
+                    href="#faq">FAQ</a>
+            </div>
+            <button
+                class="bg-primary dark:bg-white dark:text-black text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Start a Project
+            </button>
+        </div>
+    </nav>
+    <main>
+        <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+            <div class="max-w-4xl">
+                <h1 class="font-display text-8xl md:text-[10rem] leading-[0.85] tracking-tighter mb-8">
+                    Driven by <br />
+                    <span class="serif-italic opacity-40">Curiosity.</span>
+                </h1>
+                <p class="text-2xl md:text-3xl font-light opacity-70 tracking-tight">
+                    Build better, <span class="text-neon-purple font-semibold">3x faster.</span>
+                </p>
+                <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-6">
+                    <div class="flex -space-x-4">
+                        <img alt="Expert"
+                            class="w-12 h-12 rounded-full border-4 border-background-light dark:border-background-dark object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBktSemHIcdO_JhRQQSMzToXK_pek6VD-UsxBT3TdVOhKJ10KKwP6Grp1kVbdmahZV05103gnT_h10MuNyTrbzEiPgpGt1pqjater-Pd-AnPKfLpWtVWbNbUyczdKXKJabC43-mHravI203E6nxfQ_AF9ISKd5-7b6uofL4VA-cEZW1Mqa-6a0lSczoDwhBafX5VD5PRjBOkfEpmuyFtBO-5cUt_lTQvbGbqD_7LX_Z58C-DNssaRS75JHqjUKuDsMB3_xSTzM2lJrf" />
+                        <img alt="Expert"
+                            class="w-12 h-12 rounded-full border-4 border-background-light dark:border-background-dark object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o" />
+                        <img alt="Expert"
+                            class="w-12 h-12 rounded-full border-4 border-background-light dark:border-background-dark object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o" />
+                    </div>
+                    <p class="text-sm font-medium opacity-50 uppercase tracking-widest">Trusted by 50+ Fortune 500
+                        Enterprises</p>
+                </div>
+            </div>
+            <div class="mt-24 animate-bounce opacity-30">
+                <span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
+            </div>
+        </section>
+        <section class="py-32 px-6" id="services">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20 flex items-end justify-between">
+                    <div>
+                        <h2 class="font-display text-7xl mb-6">Expertise.</h2>
+                        <p class="text-xl opacity-60">High-speed technical delivery across the full stack.</p>
+                    </div>
+                    <span class="text-neon-purple font-mono text-xl">[ 08 / SPECIALIZATIONS ]</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-neon-purple/20 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span class="material-symbols-outlined text-4xl text-neon-purple relative">psychology</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Artificial Intelligence</h3>
+                        <p class="opacity-50 leading-relaxed">Custom LLMs, computer vision, and predictive modeling at
+                            scale.</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-blue-500/10 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">encrypted</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Cyber Security</h3>
+                        <p class="opacity-50 leading-relaxed">Zero-trust architecture and automated vulnerability
+                            intelligence.</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-accent/20 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">layers</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Product Design</h3>
+                        <p class="opacity-50 leading-relaxed">High-fidelity interface design rooted in cognitive
+                            research.</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-orange-500/10 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">precision_manufacturing</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Automation</h3>
+                        <p class="opacity-50 leading-relaxed">Enterprise-wide workflows powered by autonomous agents.
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-green-500/10 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">database</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Data Engineering</h3>
+                        <p class="opacity-50 leading-relaxed">Real-time pipelines and robust data warehousing solutions.
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">cloud_done</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Cloud Strategy</h3>
+                        <p class="opacity-50 leading-relaxed">Multi-cloud optimization and serverless infrastructure
+                            scaling.</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-purple-500/10 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">terminal</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">DevOps</h3>
+                        <p class="opacity-50 leading-relaxed">CI/CD automation with sub-second deployment metrics.</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-3xl group hover:border-neon-purple/50 transition-all duration-500">
+                        <div class="w-16 h-16 mb-8 relative">
+                            <div
+                                class="absolute inset-0 bg-red-500/10 blur-xl rounded-full group-hover:scale-150 transition-transform">
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary dark:text-white relative">query_stats</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Data Science</h3>
+                        <p class="opacity-50 leading-relaxed">Insight extraction through advanced statistical analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 bg-primary text-white overflow-hidden" id="portfolio">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="font-display text-7xl mb-24">Recent Impacts.</h2>
+                <div class="space-y-32">
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="rounded-3xl overflow-hidden aspect-[16/10] bg-neutral-800">
+                            <img alt="FinTech Project"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                        </div>
+                        <div>
+                            <span
+                                class="text-neon-purple font-mono tracking-widest uppercase text-sm mb-4 block">FinTech
+                                • ROI: +240%</span>
+                            <h3 class="text-5xl font-display mb-6 italic leading-tight text-white/90">Autonomous Risk
+                                Assessment for Global Banking.</h3>
+                            <p class="text-lg text-white/50 mb-8 leading-relaxed">Reduced credit approval latency from
+                                48 hours to 15 seconds using proprietary ensemble models.</p>
+                            <button class="flex items-center gap-3 font-bold group">
+                                Read Case Study
+                                <span
+                                    class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="md:order-2 rounded-3xl overflow-hidden aspect-[16/10] bg-neutral-800">
+                            <img alt="E-commerce Project"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK" />
+                        </div>
+                        <div class="md:order-1">
+                            <span
+                                class="text-neon-purple font-mono tracking-widest uppercase text-sm mb-4 block">Logistics
+                                • ROI: +180%</span>
+                            <h3 class="text-5xl font-display mb-6 italic leading-tight text-white/90">Supply Chain
+                                Optimization with Real-time IoT.</h3>
+                            <p class="text-lg text-white/50 mb-8 leading-relaxed">Integrated 50k+ sensors into a single
+                                predictive dashboard, eliminating inventory wastage.</p>
+                            <button class="flex items-center gap-3 font-bold group">
+                                Read Case Study
+                                <span
+                                    class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="rounded-3xl overflow-hidden aspect-[16/10] bg-neutral-800">
+                            <img alt="Healthcare Project"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBktSemHIcdO_JhRQQSMzToXK_pek6VD-UsxBT3TdVOhKJ10KKwP6Grp1kVbdmahZV05103gnT_h10MuNyTrbzEiPgpGt1pqjater-Pd-AnPKfLpWtVWbNbUyczdKXKJabC43-mHravI203E6nxfQ_AF9ISKd5-7b6uofL4VA-cEZW1Mqa-6a0lSczoDwhBafX5VD5PRjBOkfEpmuyFtBO-5cUt_lTQvbGbqD_7LX_Z58C-DNssaRS75JHqjUKuDsMB3_xSTzM2lJrf" />
+                        </div>
+                        <div>
+                            <span
+                                class="text-neon-purple font-mono tracking-widest uppercase text-sm mb-4 block">HealthTech
+                                • ROI: +310%</span>
+                            <h3 class="text-5xl font-display mb-6 italic leading-tight text-white/90">Precision
+                                Diagnosis through Distributed AI.</h3>
+                            <p class="text-lg text-white/50 mb-8 leading-relaxed">Partnered with top clinics to deliver
+                                a diagnostic tool with 99.4% accuracy across 12 pathologies.</p>
+                            <button class="flex items-center gap-3 font-bold group">
+                                Read Case Study
+                                <span
+                                    class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 overflow-hidden bg-background-light dark:bg-background-dark" id="testimonials">
+            <div class="max-w-7xl mx-auto px-6 mb-16">
+                <h2 class="font-display text-7xl">Testimonials.</h2>
+            </div>
+            <div class="flex overflow-x-auto gap-8 px-6 pb-12 hide-scrollbar">
+                <div
+                    class="flex-none w-[450px] aspect-[3/4] rounded-[2.5rem] relative overflow-hidden group cursor-pointer">
+                    <img alt="Client 1"
+                        class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:blur-md"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBktSemHIcdO_JhRQQSMzToXK_pek6VD-UsxBT3TdVOhKJ10KKwP6Grp1kVbdmahZV05103gnT_h10MuNyTrbzEiPgpGt1pqjater-Pd-AnPKfLpWtVWbNbUyczdKXKJabC43-mHravI203E6nxfQ_AF9ISKd5-7b6uofL4VA-cEZW1Mqa-6a0lSczoDwhBafX5VD5PRjBOkfEpmuyFtBO-5cUt_lTQvbGbqD_7LX_Z58C-DNssaRS75JHqjUKuDsMB3_xSTzM2lJrf" />
+                    <div
+                        class="absolute inset-0 bg-black/40 group-hover:bg-primary/80 transition-all duration-500 flex flex-col justify-end p-12">
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="material-symbols-outlined text-neon-purple text-5xl mb-6">format_quote</span>
+                            <p class="text-2xl text-white font-display italic mb-8">"BlueBuck didn't just build a tool;
+                                they redefined our entire R&amp;D pipeline. The ROI was visible within the first
+                                quarter."</p>
+                            <p class="text-white font-bold">Jonathan Vane</p>
+                            <p class="text-white/50 text-sm uppercase tracking-widest">CTO, NexaCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex-none w-[500px] aspect-[4/3] rounded-[2.5rem] relative overflow-hidden group cursor-pointer mt-12">
+                    <img alt="Client 2"
+                        class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:blur-md"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o" />
+                    <div
+                        class="absolute inset-0 bg-black/40 group-hover:bg-primary/80 transition-all duration-500 flex flex-col justify-end p-12">
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="material-symbols-outlined text-neon-purple text-5xl mb-6">format_quote</span>
+                            <p class="text-2xl text-white font-display italic mb-8">"The speed of execution is unlike
+                                anything we've seen in traditional consulting."</p>
+                            <p class="text-white font-bold">Sarah Jenkins</p>
+                            <p class="text-white/50 text-sm uppercase tracking-widest">VP Engineering, FlowState</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex-none w-[450px] aspect-[3/4] rounded-[2.5rem] relative overflow-hidden group cursor-pointer">
+                    <img alt="Client 3"
+                        class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:blur-md"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDPi5A1_9SH4ARzd46pnaPVPPmU74EbbO8NONj4-FWiKhKHInbZUyBl_aQbr5MZLFsS8RIDxEWi5wbvndh6v6PALnu3zm_JFiUvwTP_k-d6g-OKHTMmgQqbkMgi9zAWpZyYIWK9R3TCLxPtRNQBYUrtkV6wahI2pqXl7ScWavufvpGQbNaqJ3XjWGmgw9ePctjGmN_BmUsLW73b7jHAnOmDDiV_uyauniwkmObjzQIP0pUrfEf18qhMhPAtsKEp2ge1X-S5_kZH6o" />
+                    <div
+                        class="absolute inset-0 bg-black/40 group-hover:bg-primary/80 transition-all duration-500 flex flex-col justify-end p-12">
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="material-symbols-outlined text-neon-purple text-5xl mb-6">format_quote</span>
+                            <p class="text-2xl text-white font-display italic mb-8">"Technical brilliance paired with a
+                                deep understanding of business goals. They are our go-to partners."</p>
+                            <p class="text-white font-bold">Marcus Thorne</p>
+                            <p class="text-white/50 text-sm uppercase tracking-widest">Founder, Astra AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 px-6" id="faq">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-display text-6xl mb-16 text-center">Frequently Asked.</h2>
+                <div class="space-y-4">
+                    <details class="group glass-card rounded-3xl overflow-hidden border-black/5 dark:border-white/10"
+                        open="">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                            <h4 class="text-xl font-bold">How do you guarantee high ROI?</h4>
+                            <span
+                                class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="px-8 pb-8 opacity-60 leading-relaxed">
+                            We start every project with a rigorous impact assessment. If we don't see a clear path to at
+                            least 2x ROI within 12 months, we don't take the project. Our lean development cycles ensure
+                            you're not paying for idle time or unnecessary bureaucracy.
+                        </div>
+                    </details>
+                    <details class="group glass-card rounded-3xl overflow-hidden border-black/5 dark:border-white/10">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                            <h4 class="text-xl font-bold">How secure is my proprietary data?</h4>
+                            <span
+                                class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="px-8 pb-8 opacity-60 leading-relaxed">
+                            Security is baked into our DNA. We use air-gapped development environments for sensitive AI
+                            training and are compliant with SOC2 Type II, GDPR, and HIPAA standards. Your IP always
+                            remains yours.
+                        </div>
+                    </details>
+                    <details class="group glass-card rounded-3xl overflow-hidden border-black/5 dark:border-white/10">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                            <h4 class="text-xl font-bold">What does "3x faster" actually mean?</h4>
+                            <span
+                                class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="px-8 pb-8 opacity-60 leading-relaxed">
+                            Compared to industry benchmarks for enterprise software delivery, our modular internal
+                            frameworks and automated testing suites allow us to move from discovery to production-grade
+                            deployment in 1/3 of the time.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary text-white pt-32 pb-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-20 mb-32">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                            <span class="material-symbols-outlined text-black text-2xl font-bold">insights</span>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight">BlueBuck</span>
+                    </div>
+                    <h3 class="font-display text-4xl mb-8 max-w-sm italic">Engineering the future of enterprise
+                        intelligence.</h3>
+                    <div class="flex gap-4">
+                        <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-neon-purple hover:border-neon-purple transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-lg">public</span>
+                        </a>
+                        <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-neon-purple hover:border-neon-purple transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-lg">terminal</span>
+                        </a>
+                        <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-neon-purple hover:border-neon-purple transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-lg">podcasts</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 opacity-40 uppercase text-xs tracking-widest">Global Locations</h4>
+                    <ul class="space-y-6 text-white/70">
+                        <li>
+                            <p class="font-bold text-white mb-1">London</p>
+                            <p class="text-sm opacity-50">King's Cross Tech Hub</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-white mb-1">New York</p>
+                            <p class="text-sm opacity-50">Silicon Alley, 5th Ave</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-white mb-1">Singapore</p>
+                            <p class="text-sm opacity-50">Marina Bay Sands Centre</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 opacity-40 uppercase text-xs tracking-widest">Explore</h4>
+                    <ul class="space-y-4 text-white/70">
+                        <li><a class="hover:text-neon-purple transition-colors" href="#">Research Papers</a></li>
+                        <li><a class="hover:text-neon-purple transition-colors" href="#">Case Studies</a></li>
+                        <li><a class="hover:text-neon-purple transition-colors" href="#">Open Source</a></li>
+                        <li><a class="hover:text-neon-purple transition-colors" href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-sm opacity-30 tracking-wide">© 2024 BlueBuck Research Services. All rights reserved.</p>
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest opacity-30">
+                    <a class="hover:opacity-100 transition-opacity" href="#">Privacy</a>
+                    <a class="hover:opacity-100 transition-opacity" href="#">Terms</a>
+                    <a class="hover:opacity-100 transition-opacity" href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-white dark:bg-neutral-800 border border-black/10 dark:border-white/10 shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all group"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span
+            class="material-symbols-outlined text-2xl dark:hidden group-hover:rotate-12 transition-transform">dark_mode</span>
+        <span
+            class="material-symbols-outlined text-2xl hidden dark:block text-yellow-400 group-hover:rotate-12 transition-transform">light_mode</span>
+    </button>
+
+</body>
+
+</html>
