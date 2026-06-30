@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 // PLACEHOLDER: Replace with real project data when assets are ready
@@ -69,10 +70,13 @@ export function Portfolio() {
             >
               {/* Real project image */}
               {project.image ? (
-                <img
+                <Image
                   src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt={`${project.title} — ${project.category} project by BlueBuck Research`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               ) : (
                 <div className={`absolute inset-0 ${project.placeholder}`} />
@@ -112,10 +116,12 @@ export function Portfolio() {
                 className="group relative rounded-3xl overflow-hidden flex-1 min-h-[185px] flex flex-col justify-end border border-emerald/15 mint-glow"
               >
                 {project.image ? (
-                  <img
+                  <Image
                     src={project.image}
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt={`${project.title} — ${project.category} project by BlueBuck Research`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 42vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
                   <div className={`absolute inset-0 ${project.placeholder}`} />

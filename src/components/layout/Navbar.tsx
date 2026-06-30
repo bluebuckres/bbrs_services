@@ -52,7 +52,7 @@ export function Navbar() {
         };
 
         updateTime();
-        const interval = setInterval(updateTime, 1000);
+        const interval = setInterval(updateTime, 60000);
 
         return () => clearInterval(interval);
     }, []);

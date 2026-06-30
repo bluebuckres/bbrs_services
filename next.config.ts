@@ -19,10 +19,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "lh3.googleusercontent.com",
-      },
-      {
-        protocol: "https",
         hostname: "cdn.dribbble.com",
       },
       {
@@ -30,6 +26,9 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
+    // Serve optimized images up to 1920px for large displays
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 320, 384],
   },
 
   // Security and performance headers
@@ -45,6 +44,13 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+        ],
+      },
+      // Cache static assets aggressively
+      {
+        source: "/(.*)\\.(png|jpg|jpeg|webp|avif|svg|ico|woff|woff2|ttf|otf)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
     ];

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -125,10 +126,12 @@ export function Testimonials() {
                     {/* Left: Image with Metric */}
                     <div className="lg:col-span-5 relative group">
                         <div className="aspect-[4/5] overflow-hidden rounded-sm relative">
-                            <img
+                            <Image
                                 alt={`${current.name}, ${current.role}`}
                                 className="w-full h-full object-cover grayscale-[0.2] contrast-110 hover:scale-105 transition-transform duration-700"
                                 src={current.image}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                             />
 
                             {/* Corner Decorations */}

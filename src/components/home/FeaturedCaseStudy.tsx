@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function FeaturedCaseStudy() {
     return (
@@ -32,10 +33,12 @@ export function FeaturedCaseStudy() {
                         </button>
                     </div>
                     <div className="w-full md:w-1/2 h-[400px] md:h-[700px] bg-neutral-900 relative overflow-hidden">
-                        <img
-                            alt="Sleek Dashboard Interface"
-                            className="w-full h-full object-cover object-left opacity-90"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK"
+                        <Image
+                            alt="AI-powered analytics dashboard built by BlueBuck Research"
+                            className="object-cover object-left opacity-90"
+                            src="/Project_Pic/MrMed_in.webp"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-transparent to-transparent"></div>
                     </div>

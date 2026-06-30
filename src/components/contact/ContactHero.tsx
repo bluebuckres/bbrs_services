@@ -140,7 +140,7 @@ export function ContactHero() {
                                       queryParams: { "dynamicHeight": true },
                                       slug: "meeting-with-bluebuck-research",
                                       isSidebarAndCoverImgHidden: "false",
-                                      shouldForwardQueryParams: "false"
+                                      shouldForwardQueryParams: "true"
                                     });
                                   }
                                 `}

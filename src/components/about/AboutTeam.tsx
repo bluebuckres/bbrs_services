@@ -1,37 +1,38 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const team = [
     {
         name: "Supriyo Paul",
         role: "Founder & Principal Technologist",
         desc: "Data-driven researcher specializing in ML and data science modeling. Vast cross-domain expertise spanning core architecture, deployment, finance, and marketing.",
-        image: "/Founder_Pic/Supriyo_BlueBuck Founder.webp",
+        image: "/Founder_Pic/Supriyo_BlueBuck_Founder.webp",
         imgClass: "object-top"
     },
     {
         name: "Abhijit Dasgupta",
         role: "Head of Cloud & DevOps",
         desc: "Architecting scalable infrastructure and managing global cloud deployments.",
-        image: "/Founder_Pic/Abhijit Dasgupta.jpeg"
+        image: "/Founder_Pic/Abhijit_Dasgupta.jpeg"
     },
     {
         name: "Divyansh Thakur",
         role: "AI Research Lead",
         desc: "Pioneering research in generative AI and advanced machine learning models.",
-        image: "/Founder_Pic/Divyansh Thakur.png"
+        image: "/Founder_Pic/Divyansh_Thakur.png"
     },
     {
         name: "Nitish Goyal",
         role: "Chief Technology Officer",
         desc: "Driving the core technology vision across frontend, backend, and system architecture.",
-        image: "/Founder_Pic/Nitish Goyal.png",
+        image: "/Founder_Pic/Nitish_Goyal.png",
         imgClass: "object-top"
     },
     {
         name: "Trisha Oawal",
         role: "Head of Strategy & Design",
         desc: "Leading product vision, content strategy, and user experience design.",
-        image: "/Founder_Pic/Trisha Oawal.png"
+        image: "/Founder_Pic/Trisha_Oawal.png"
     }
 ];
 
@@ -47,17 +48,16 @@ export function AboutTeam() {
                     We don't outsource. We don't hire junior devs to learn on your project. You work directly with the senior engineers building your platform.
                 </p>
 
-                {/* Organic Image Collage */}
                 <div className="flex flex-wrap justify-center gap-6 mb-32 text-center">
-                    {/* Using inline styles for organic shapes as defined in HTML */}
-                    <div className="w-64 h-80 overflow-hidden border-2 border-white rotate-3 shadow-md" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
-                        <img alt="Office Life" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/office_pic/rUCx27VHgWkb1sUQ1xhUoWa1qAw.webp" />
+                    {/* Organic shaped office photos */}
+                    <div className="w-64 h-80 overflow-hidden border-2 border-white rotate-3 shadow-md relative" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
+                        <Image alt="BlueBuck Research office life" className="object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/office_pic/rUCx27VHgWkb1sUQ1xhUoWa1qAw.webp" fill sizes="256px" />
                     </div>
-                    <div className="w-80 h-64 overflow-hidden border-2 border-white -rotate-6 mt-12 shadow-md" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
-                        <img alt="Whiteboard session" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/office_pic/IMG20251221170636 (2).jpg" />
+                    <div className="w-80 h-64 overflow-hidden border-2 border-white -rotate-6 mt-12 shadow-md relative" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
+                        <Image alt="BlueBuck Research whiteboard session" className="object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/office_pic/IMG20251221170636 (2).jpg" fill sizes="320px" />
                     </div>
-                    <div className="w-72 h-72 overflow-hidden border-2 border-white rotate-6 shadow-md" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
-                        <img alt="Modern Workspace" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/office_pic/zi3STFivI9DeXrV7bW8Ne2Hjiqc.webp" />
+                    <div className="w-72 h-72 overflow-hidden border-2 border-white rotate-6 shadow-md relative" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
+                        <Image alt="BlueBuck Research modern workspace" className="object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/office_pic/zi3STFivI9DeXrV7bW8Ne2Hjiqc.webp" fill sizes="288px" />
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@ export function AboutTeam() {
                             <div className="relative w-40 h-40 mx-auto mb-5">
                                 <div className="absolute inset-0 rounded-full border-2 border-[#9d88cc]/20 group-hover:scale-105 transition-transform duration-500" />
                                 <div className="absolute inset-2 rounded-full overflow-hidden">
-                                    <img alt={member.name} className={cn("w-full h-full object-cover transition-all duration-500 hover:blur-[2px] brightness-95", member.imgClass)} src={member.image} />
+                                    <Image alt={member.name} className={cn("object-cover transition-all duration-500 hover:blur-[2px] brightness-95", member.imgClass)} src={member.image} fill sizes="144px" />
                                 </div>
                                 <div className="absolute inset-0 flex items-center justify-center p-3 text-[11px] font-medium opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none">
                                     <p className="text-[#2d2d2d] font-semibold bg-white/95 px-3 py-2 rounded-lg shadow-sm leading-relaxed">

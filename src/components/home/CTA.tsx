@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check, MapPin, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,6 +24,10 @@ const guarantees = [
 ];
 
 export function CTA() {
+  const [selectedTopic, setSelectedTopic] = useState<string>("Custom Web App");
+
+  const bookingUrl = `/contact?topic=${encodeURIComponent(selectedTopic)}`;
+
   return (
     <section
       className="relative py-28 px-6 overflow-hidden bg-background-light dark:bg-background-dark"
@@ -89,7 +96,12 @@ export function CTA() {
                   {["AI Strategy & Integration", "Custom Web App", "Team Augmentation", "Just Exploring"].map((topic) => (
                     <div 
                       key={topic}
-                      className="text-xs text-center py-3 px-2 rounded-xl border border-emerald/10 bg-white/40 dark:bg-black/20 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-colors cursor-pointer"
+                      onClick={() => setSelectedTopic(topic)}
+                      className={`text-xs text-center py-3 px-2 rounded-xl border transition-colors cursor-pointer ${
+                        selectedTopic === topic
+                          ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-semibold"
+                          : "border-emerald/10 bg-white/40 dark:bg-black/20 hover:bg-emerald-500/5 hover:border-emerald-500/30 text-foreground/70"
+                      }`}
                     >
                       {topic}
                     </div>
@@ -97,8 +109,8 @@ export function CTA() {
                 </div>
                 <div className="text-center">
                   <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-500 text-white">
-                    <Link href="https://bluebuck-research.neetocal.com/meeting-with-bluebuck-research" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 whitespace-nowrap">
-                      <span>Find a time on Neetocal</span>
+                    <Link href={bookingUrl} className="flex items-center justify-center gap-2 whitespace-nowrap">
+                      <span>Book a Discovery Call</span>
                       <ArrowRight className="w-4 h-4 shrink-0" />
                     </Link>
                   </Button>

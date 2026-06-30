@@ -236,22 +236,19 @@ export default function InsightsPage() {
 
         {/* Bottom CTA */}
         <div className="mt-20 pt-16 border-t border-emerald/8 text-center">
-          <p className="text-sm opacity-40 mb-4">
-            Want these articles in your inbox? No spam. One email per month.
+          <p className="text-sm opacity-40 mb-3">
+            Have a project in mind? Let's talk.
           </p>
-          <form className="flex gap-2 max-w-sm mx-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 bg-white/60 dark:bg-white/5 border border-emerald/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-600 transition-colors"
-            />
-            <button
-              type="submit"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
+          <h2 className="font-display text-3xl md:text-4xl mb-8">
+            Ready to build something <span className="serif-italic opacity-40">worth shipping?</span>
+          </h2>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 h-12 px-8 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-sm font-semibold transition-colors group"
+          >
+            Book a Discovery Call
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </div>

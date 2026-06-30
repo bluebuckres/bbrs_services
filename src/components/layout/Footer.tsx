@@ -127,25 +127,25 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Col 4: Newsletter */}
+                    {/* Col 4: Booking CTA */}
                     <div className="flex flex-col space-y-6">
-                        <h3 className="text-xs font-black uppercase tracking-[0.3em] text-white/30 mb-2">Stay up to date</h3>
+                        <h3 className="text-xs font-black uppercase tracking-[0.3em] text-white/30 mb-2">Start a Project</h3>
                         <p className="text-sm leading-relaxed text-white/60 font-light">
-                            Want these articles in your inbox? No spam. One email per month.
+                            Ready to build something? Book a 30-minute discovery call with a co-founder — no sales deck, no account manager.
                         </p>
-                        <div className="relative flex flex-col sm:flex-row border border-white/10 rounded-lg overflow-hidden bg-white/5 focus-within:border-white/30 transition-all">
-                            <input
-                                className="w-full bg-transparent border-none focus:ring-0 focus:outline-none py-4 px-4 text-sm placeholder:text-white/20 text-white"
-                                placeholder="Email Address"
-                                type="email"
-                            />
-                            <button
-                                className="bg-white text-[#001414] px-6 text-xs font-black uppercase tracking-widest hover:bg-gray-200 transition-colors"
-                                type="submit"
-                            >
-                                Subscribe
-                            </button>
-                        </div>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-lg text-xs font-black uppercase tracking-widest transition-all duration-300 group w-fit"
+                        >
+                            Book a Discovery Call
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                        <p className="text-xs text-white/30">
+                            Or email us at{" "}
+                            <a href="mailto:connect@bluebuckresearch.com" className="text-mint hover:text-white transition-colors">
+                                connect@bluebuckresearch.com
+                            </a>
+                        </p>
                     </div>
                 </div>
 

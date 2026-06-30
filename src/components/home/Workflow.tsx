@@ -1,4 +1,5 @@
 import { Play, Search, Layout, Code, Zap } from "lucide-react";
+import Image from "next/image";
 
 export function Workflow() {
     return (
@@ -14,10 +15,12 @@ export function Workflow() {
                             We’ve refined a process that prioritizes speed without compromising on the depth of research and quality of code.
                         </p>
                         <div className="relative w-full aspect-square bg-neutral-100 rounded-3xl overflow-hidden border border-black/5">
-                            <img
-                                alt="Workflow Visual"
-                                className="w-full h-full object-cover opacity-80 mix-blend-multiply grayscale"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZuBhVhFu963Zk3CVlW9IEnn8SP0nu9XJZ29_KBJkdAiI7XwQyl6C8gF4NqKTFE-FmHpBpa2YcOHWG6RJFxtiqz3VFZT7zDdVZiFbleZaO1QOEvkBW0rbfyfzzSgCD6p4UeVeuEhhnQpeYDgdyTDVbtHnK7Q1wUNXWeewamL8Kg-LoDZwE8_ZJYNsrU6b4LGnZ4L-NWrSqXsatBfeC6tfYhJerCI3J1oGPqJWPQh-T_5kVKkACrds6OMc5z7kXsfwr-Q9nL2KKxjK"
+                            <Image
+                                alt="BlueBuck Research engineering workflow and development process"
+                                className="object-cover opacity-80 mix-blend-multiply grayscale"
+                                src="/office_pic/IMG20251221170636 (2).jpg"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="w-24 h-24 bg-white/80 backdrop-blur-xl rounded-full flex items-center justify-center shadow-2xl">
