@@ -43,6 +43,17 @@ export function NeetoCalPopup() {
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (max-width: 768px) {
+            #neetocal-floating-button, 
+            .neetocal-floating-btn-container,
+            [id^="neeto-cal-floating"] {
+              display: none !important;
+            }
+          }
+        `
+      }} />
       <Script id="neetocal-init" strategy="afterInteractive">
         {`window.neetoCal = window.neetoCal || { embed: function(){(window.neetoCal.q=window.neetoCal.q||[]).push(arguments)} };`}
       </Script>
