@@ -28,6 +28,8 @@ export function Navbar() {
     const [time, setTime] = useState<Record<string, string>>({});
 
     const [pillStyle, setPillStyle] = useState({ left: 0, width: 0, opacity: 0 });
+    const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+    const [isMobileInsightsOpen, setIsMobileInsightsOpen] = useState(false);
     const navRef = useRef<HTMLDivElement>(null);
     const linksRef = useRef<HTMLDivElement>(null);
 
@@ -202,9 +204,7 @@ export function Navbar() {
                     </div>
 
                     {hoveredLink === "Services" && (
-                        <div className="absolute top-full left-0 w-full pt-6">
-                            <ServicesMegaMenu />
-                        </div>
+                        <ServicesMegaMenu />
                     )}
                 </nav>
             </header>
@@ -214,29 +214,57 @@ export function Navbar() {
                 isMobileMenuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-10"
             )}>
                 <div className="flex flex-col gap-6">
-                    {navLinks.map((link, idx) => (
-                        <div key={link.name} className="flex flex-col border-b border-white/10 pb-4">
-                            <Link
-                                href={link.href}
-                                className="text-3xl font-light text-white flex justify-between items-center"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                style={{ transitionDelay: `${idx * 50}ms` }}
-                            >
-                                {link.name}
-                                {link.hasDropdown && link.name !== "Insights" ? (
-                                    <ChevronDown className="w-5 h-5 text-white/30" />
+                    {navLinks.map((link, idx) => {
+                        const hasDropdown = link.hasDropdown;
+                        const isOpen = link.name === "Services" ? isMobileServicesOpen : isMobileInsightsOpen;
+                        const setIsOpen = link.name === "Services" ? setIsMobileServicesOpen : setIsMobileInsightsOpen;
+
+                        return (
+                            <div key={link.name} className="flex flex-col border-b border-white/10 pb-4">
+                                {hasDropdown ? (
+                                    <button
+                                        onClick={() => setIsOpen(!isOpen)}
+                                        className="text-3xl font-light text-white flex justify-between items-center text-left w-full"
+                                        style={{ transitionDelay: `${idx * 50}ms` }}
+                                    >
+                                        {link.name}
+                                        <ChevronDown className={cn("w-5 h-5 text-white/30 transition-transform duration-300", isOpen ? "rotate-180" : "")} />
+                                    </button>
                                 ) : (
-                                    <ArrowRight className="w-5 h-5 -rotate-45 text-white/30" />
+                                    <Link
+                                        href={link.href}
+                                        className="text-3xl font-light text-white flex justify-between items-center"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        style={{ transitionDelay: `${idx * 50}ms` }}
+                                    >
+                                        {link.name}
+                                        <ArrowRight className="w-5 h-5 -rotate-45 text-white/30" />
+                                    </Link>
                                 )}
-                            </Link>
-                            {link.name === "Insights" && (
-                                <div className="flex flex-col gap-3 mt-4 pl-4 border-l-2 border-white/10">
-                                    <Link href="/insights" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Blog</Link>
-                                    <Link href="/projects" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Case Studies</Link>
-                                </div>
-                            )}
-                        </div>
-                    ))}
+
+                                {link.name === "Services" && isOpen && (
+                                    <div className="flex flex-col gap-3 mt-4 pl-4 border-l-2 border-white/10 animate-in fade-in slide-in-from-top-1 duration-200">
+                                        <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-emerald-400 font-medium">All Services</Link>
+                                        <Link href="/services/artificial-intelligence" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Artificial Intelligence</Link>
+                                        <Link href="/services/data-engineering" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Data Engineering</Link>
+                                        <Link href="/services/cybersecurity" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Cyber Security</Link>
+                                        <Link href="/services/cloud-strategy" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Cloud Strategy</Link>
+                                        <Link href="/services/product-design" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Product Design</Link>
+                                        <Link href="/services/devops" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">DevOps</Link>
+                                        <Link href="/services/automation" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Automation</Link>
+                                        <Link href="/services/data-science" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Data Science</Link>
+                                    </div>
+                                )}
+
+                                {link.name === "Insights" && isOpen && (
+                                    <div className="flex flex-col gap-3 mt-4 pl-4 border-l-2 border-white/10 animate-in fade-in slide-in-from-top-1 duration-200">
+                                        <Link href="/insights" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Blog</Link>
+                                        <Link href="/projects" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-white/70 hover:text-white">Case Studies</Link>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
                     <div className="mt-8">
                         <Link
                             href="/contact"
