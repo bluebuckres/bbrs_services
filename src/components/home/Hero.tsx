@@ -87,33 +87,56 @@ export function Hero() {
         </div>
       </div>
 
-      {/* ───── Project Screenshot Strip (CSS scroll, no JS) ───── */}
       <div className="w-full mt-0 overflow-hidden relative" aria-hidden="true">
         {/* Edge fade */}
         <div className="absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-[#fcfaf2] dark:from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-[#fcfaf2] dark:from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-4 pb-10 pt-2 animate-scroll" style={{ width: "max-content" }}>
-          {[...projectImages, ...projectImages].map((img, i) => (
-            <div
-              key={i}
-              className="relative w-64 h-44 md:w-80 md:h-52 rounded-2xl overflow-hidden flex-shrink-0 border border-black/8 dark:border-white/8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="320px"
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3">
-                <span className="text-[10px] text-white/90 font-semibold bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
-                  {img.alt.split("—")[0].trim()}
-                </span>
+        <div className="flex select-none">
+          <div className="flex shrink-0 gap-4 pr-4 pb-10 pt-2 animate-scroll">
+            {projectImages.map((img, i) => (
+              <div
+                key={i}
+                className="relative w-64 h-44 md:w-80 md:h-52 rounded-2xl overflow-hidden flex-shrink-0 border border-black/8 dark:border-white/8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="320px"
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <span className="text-[10px] text-white/90 font-semibold bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                    {img.alt.split("—")[0].trim()}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="flex shrink-0 gap-4 pr-4 pb-10 pt-2 animate-scroll" aria-hidden="true">
+            {projectImages.map((img, i) => (
+              <div
+                key={`${i}-dup`}
+                className="relative w-64 h-44 md:w-80 md:h-52 rounded-2xl overflow-hidden flex-shrink-0 border border-black/8 dark:border-white/8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="320px"
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <span className="text-[10px] text-white/90 font-semibold bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                    {img.alt.split("—")[0].trim()}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

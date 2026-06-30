@@ -29,7 +29,7 @@ export function AboutMetrics() {
                     <div className="bg-white dark:bg-black/20 p-10 rounded-2xl border border-black/5 dark:border-white/10 h-[280px] flex flex-col justify-between group hover:border-emerald-600/40 transition-all shadow-sm">
                         <BadgeCheck className="text-emerald-600 dark:text-mint w-12 h-12 group-hover:scale-110 transition-transform" />
                         <div>
-                            <h3 className="text-5xl font-display mb-2 text-[#2d2d2d] dark:text-white">95%</h3>
+                            <h3 className="text-5xl font-display mb-2 text-[#2d2d2d] dark:text-white">98%</h3>
                             <p className="text-[#2d2d2d]/40 dark:text-white/40 font-medium uppercase tracking-widest text-xs">Client Retention Rate</p>
                         </div>
                     </div>

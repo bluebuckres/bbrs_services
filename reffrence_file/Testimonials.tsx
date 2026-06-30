@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
         name: 'Priya Sharma',
         role: 'VP Engineering @ FinanceHub',
         image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop',
-        metric: { label: 'Customer Satisfaction', value: '95%', percentage: 95 }
+        metric: { label: 'Customer Satisfaction', value: '98%', percentage: 98 }
     },
     {
         id: 3,
